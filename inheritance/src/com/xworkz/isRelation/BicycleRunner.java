@@ -15,7 +15,7 @@ import com.xworkz.inheritance.Bicycle;
 
             System.out.println("--------------------------------------");
 
-            Bicycle bicycle = new Helmet(); // Polymorphic reference
+            Bicycle bicycle = new Helmet();
             bicycle.ride();
             bicycle.brake();
             bicycle.pedal();

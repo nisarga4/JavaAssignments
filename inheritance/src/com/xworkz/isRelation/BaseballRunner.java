@@ -15,7 +15,7 @@ import com.xworkz.inheritance.Baseball;
 
             System.out.println("--------------------------------------");
 
-            Baseball baseball = new Bat(); // Polymorphic reference
+            Baseball baseball = new Bat();
             baseball.pitch();
             baseball.catchBall();
             baseball.throwBall();
