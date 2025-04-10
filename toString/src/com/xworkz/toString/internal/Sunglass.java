@@ -1,24 +1,28 @@
 package com.xworkz.toString.internal;
-    public class Sunglass {
-        private String brand;
-        private String frameType;
-        private boolean isPolarized;
-        private double price;
 
-        public Sunglass(String brand, String frameType, boolean isPolarized, double price) {
-            this.brand = brand;
-            this.frameType = frameType;
-            this.isPolarized = isPolarized;
-            this.price = price;
-        }
+public class Sunglass {
+    private String brand;
+    private boolean polarized;
+    private double price;
 
-        @Override
-        public String toString() {
-            return "Sunglass{" +
-                    "Brand='" + brand + '\'' +
-                    ", FrameType='" + frameType + '\'' +
-                    ", Polarized=" + (isPolarized ? "Yes" : "No") +
-                    ", Price=₹" + price +
-                    '}';
-        }
+    public Sunglass(String brand, boolean polarized, double price) {
+        this.brand = brand;
+        this.polarized = polarized;
+        this.price = price;
     }
+
+    @Override
+    public String toString() {
+        return "Sunglass{" +
+                "Brand='" + brand + '\'' +
+                ", Polarized=" + (polarized ? "Yes" : "No") +
+                ", Price=" + price +
+                '}';
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("Default hashcode: " + super.hashCode());
+        return 40040;
+    }
+}

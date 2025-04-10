@@ -1,24 +1,28 @@
 package com.xworkz.toString.internal;
-    public class Drumstick {
-        private String type;
-        private double length; // in cm
-        private boolean isOrganic;
-        private double pricePerKg;
 
-        public Drumstick(String type, double length, boolean isOrganic, double pricePerKg) {
-            this.type = type;
-            this.length = length;
-            this.isOrganic = isOrganic;
-            this.pricePerKg = pricePerKg;
-        }
+public class Drumstick {
+    private double length; // in cm
+    private boolean isFresh;
+    private String origin;
 
-        @Override
-        public String toString() {
-            return "Drumstick{" +
-                    "Type='" + type + '\'' +
-                    ", Length=" + length + " cm" +
-                    ", Organic=" + (isOrganic ? "Yes" : "No") +
-                    ", PricePerKg=₹" + pricePerKg +
-                    '}';
-        }
+    public Drumstick(double length, boolean isFresh, String origin) {
+        this.length = length;
+        this.isFresh = isFresh;
+        this.origin = origin;
     }
+
+    @Override
+    public String toString() {
+        return "Drumstick{" +
+                "Length=" + length + "cm" +
+                ", Fresh=" + (isFresh ? "Yes" : "No") +
+                ", Origin='" + origin + '\'' +
+                '}';
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("Default hashcode: " + super.hashCode());
+        return 1010;
+    }
+}

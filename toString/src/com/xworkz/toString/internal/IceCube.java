@@ -1,25 +1,28 @@
 package com.xworkz.toString.internal;
 
-    public class IceCube {
-        private String shape;
-        private double sizeInCm;
-        private boolean isTransparent;
-        private String madeFrom;
+public class IceCube {
+    private double size;
+    private boolean isClear;
+    private String shape;
 
-        public IceCube(String shape, double sizeInCm, boolean isTransparent, String madeFrom) {
-            this.shape = shape;
-            this.sizeInCm = sizeInCm;
-            this.isTransparent = isTransparent;
-            this.madeFrom = madeFrom;
-        }
-
-        @Override
-        public String toString() {
-            return "IceCube{" +
-                    "Shape='" + shape + '\'' +
-                    ", Size=" + sizeInCm + " cm" +
-                    ", Transparent=" + (isTransparent ? "Yes" : "No") +
-                    ", MadeFrom='" + madeFrom + '\'' +
-                    '}';
-        }
+    public IceCube(double size, boolean isClear, String shape) {
+        this.size = size;
+        this.isClear = isClear;
+        this.shape = shape;
     }
+
+    @Override
+    public String toString() {
+        return "IceCube{" +
+                "Size=" + size + "cm" +
+                ", Clear=" + (isClear ? "Yes" : "No") +
+                ", Shape='" + shape + '\'' +
+                '}';
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("Default hashcode: " + super.hashCode());
+        return 15015;
+    }
+}

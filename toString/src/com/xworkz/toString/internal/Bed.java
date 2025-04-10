@@ -1,25 +1,28 @@
 package com.xworkz.toString.internal;
 
-    public class Bed {
-        private String size;
-        private String material;
-        private boolean hasStorage;
-        private double price;
+public class Bed {
+    private String type;
+    private String material;
+    private double size; // in feet
 
-        public Bed(String size, String material, boolean hasStorage, double price) {
-            this.size = size;
-            this.material = material;
-            this.hasStorage = hasStorage;
-            this.price = price;
-        }
-
-        @Override
-        public String toString() {
-            return "Bed{" +
-                    "Size='" + size + '\'' +
-                    ", Material='" + material + '\'' +
-                    ", HasStorage=" + (hasStorage ? "Yes" : "No") +
-                    ", Price=₹" + price +
-                    '}';
-        }
+    public Bed(String type, String material, double size) {
+        this.type = type;
+        this.material = material;
+        this.size = size;
     }
+
+    @Override
+    public String toString() {
+        return "Bed{" +
+                "Type='" + type + '\'' +
+                ", Material='" + material + '\'' +
+                ", Size=" + size + "ft" +
+                '}';
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("Default hashcode: " + super.hashCode());
+        return 777;
+    }
+}

@@ -1,24 +1,28 @@
 package com.xworkz.toString.internal;
 
 public class Vehicle {
+    private String type;
+    private String brand;
+    private double engineCC;
 
-        protected String brand;
-        protected String model;
-        protected int year;
-
-        public Vehicle(String brand, String model, int year) {
-            this.brand = brand;
-            this.model = model;
-            this.year = year;
-        }
-
-        @Override
-        public String toString() {
-            return "Vehicle{" +
-                    "Brand='" + brand + '\'' +
-                    ", Model='" + model + '\'' +
-                    ", Year=" + year +
-                    '}';
-        }
+    public Vehicle(String type, String brand, double engineCC) {
+        this.type = type;
+        this.brand = brand;
+        this.engineCC = engineCC;
     }
 
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "Type='" + type + '\'' +
+                ", Brand='" + brand + '\'' +
+                ", EngineCC=" + engineCC +
+                '}';
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("Default hashcode: " + super.hashCode());
+        return 44044;
+    }
+}

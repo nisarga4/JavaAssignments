@@ -1,25 +1,28 @@
 package com.xworkz.toString.internal;
 
 public class Poster {
-        private String title;
-        private String theme;
-        private double height;
-        private double width;
+    private String theme;
+    private String size;
+    private boolean laminated;
 
-        public Poster(String title, String theme, double height, double width) {
-            this.title = title;
-            this.theme = theme;
-            this.height = height;
-            this.width = width;
-        }
-
-        @Override
-        public String toString() {
-            return "Poster{" +
-                    "Title='" + title + '\'' +
-                    ", Theme='" + theme + '\'' +
-                    ", Height=" + height + " inches" +
-                    ", Width=" + width + " inches" +
-                    '}';
-        }
+    public Poster(String theme, String size, boolean laminated) {
+        this.theme = theme;
+        this.size = size;
+        this.laminated = laminated;
     }
+
+    @Override
+    public String toString() {
+        return "Poster{" +
+                "Theme='" + theme + '\'' +
+                ", Size='" + size + '\'' +
+                ", Laminated=" + (laminated ? "Yes" : "No") +
+                '}';
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("Default hashcode: " + super.hashCode());
+        return 30030;
+    }
+}

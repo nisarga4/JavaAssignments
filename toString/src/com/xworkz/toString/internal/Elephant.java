@@ -1,24 +1,28 @@
 package com.xworkz.toString.internal;
-    public class Elephant {
-        private String name;
-        private int age;
-        private double weight; // in kg
-        private String origin;
 
-        public Elephant(String name, int age, double weight, String origin) {
-            this.name = name;
-            this.age = age;
-            this.weight = weight;
-            this.origin = origin;
-        }
+public class Elephant {
+    private String name;
+    private double height;
+    private boolean isTusked;
 
-        @Override
-        public String toString() {
-            return "Elephant{" +
-                    "Name='" + name + '\'' +
-                    ", Age=" + age + " years" +
-                    ", Weight=" + weight + " kg" +
-                    ", Origin='" + origin + '\'' +
-                    '}';
-        }
+    public Elephant(String name, double height, boolean isTusked) {
+        this.name = name;
+        this.height = height;
+        this.isTusked = isTusked;
     }
+
+    @Override
+    public String toString() {
+        return "Elephant{" +
+                "Name='" + name + '\'' +
+                ", Height=" + height + "m" +
+                ", Tusked=" + (isTusked ? "Yes" : "No") +
+                '}';
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("Default hashcode: " + super.hashCode());
+        return 4040;
+    }
+}

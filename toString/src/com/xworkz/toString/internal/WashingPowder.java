@@ -1,24 +1,28 @@
 package com.xworkz.toString.internal;
-    public class WashingPowder {
-        private String brand;
-        private int quantityInGrams;
-        private String fragrance;
-        private boolean isEcoFriendly;
 
-        public WashingPowder(String brand, int quantityInGrams, String fragrance, boolean isEcoFriendly) {
-            this.brand = brand;
-            this.quantityInGrams = quantityInGrams;
-            this.fragrance = fragrance;
-            this.isEcoFriendly = isEcoFriendly;
-        }
+public class WashingPowder {
+    private String brand;
+    private double quantity;
+    private boolean forSensitiveSkin;
 
-        @Override
-        public String toString() {
-            return "WashingPowder{" +
-                    "Brand='" + brand + '\'' +
-                    ", Quantity=" + quantityInGrams + "g" +
-                    ", Fragrance='" + fragrance + '\'' +
-                    ", EcoFriendly=" + (isEcoFriendly ? "Yes" : "No") +
-                    '}';
-        }
+    public WashingPowder(String brand, double quantity, boolean forSensitiveSkin) {
+        this.brand = brand;
+        this.quantity = quantity;
+        this.forSensitiveSkin = forSensitiveSkin;
     }
+
+    @Override
+    public String toString() {
+        return "WashingPowder{" +
+                "Brand='" + brand + '\'' +
+                ", Quantity=" + quantity + "kg" +
+                ", ForSensitiveSkin=" + (forSensitiveSkin ? "Yes" : "No") +
+                '}';
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("Default hashcode: " + super.hashCode());
+        return 46046;
+    }
+}

@@ -1,25 +1,28 @@
 package com.xworkz.toString.internal;
-    public class Army {
-        private String country;
-        private int numberOfSoldiers;
-        private String divisionType;
-        private boolean isActive;
 
-        public Army(String country, int numberOfSoldiers, String divisionType, boolean isActive) {
-            this.country = country;
-            this.numberOfSoldiers = numberOfSoldiers;
-            this.divisionType = divisionType;
-            this.isActive = isActive;
-        }
+public class Army {
+    private String country;
+    private int soldiers;
+    private String division;
 
-        @Override
-        public String toString() {
-            return "Army{" +
-                    "Country='" + country + '\'' +
-                    ", NumberOfSoldiers=" + numberOfSoldiers +
-                    ", DivisionType='" + divisionType + '\'' +
-                    ", IsActive=" + (isActive ? "Yes" : "No") +
-                    '}';
-        }
+    public Army(String country, int soldiers, String division) {
+        this.country = country;
+        this.soldiers = soldiers;
+        this.division = division;
     }
 
+    @Override
+    public String toString() {
+        return "Army{" +
+                "Country='" + country + '\'' +
+                ", Soldiers=" + soldiers +
+                ", Division='" + division + '\'' +
+                '}';
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("Default hashcode: " + super.hashCode());
+        return 555;
+    }
+}

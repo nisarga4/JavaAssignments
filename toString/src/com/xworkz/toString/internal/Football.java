@@ -1,26 +1,28 @@
 package com.xworkz.toString.internal;
 
-    public class Football {
-        private String brand;
-        private String color;
-        private String material;
-        private double price;
+public class Football {
+    private String brand;
+    private double size;
+    private boolean isFIFAApproved;
 
-        public Football(String brand, String color, String material, double price) {
-            this.brand = brand;
-            this.color = color;
-            this.material = material;
-            this.price = price;
-        }
-
-        @Override
-        public String toString() {
-            return "Football{" +
-                    "Brand='" + brand + '\'' +
-                    ", Color='" + color + '\'' +
-                    ", Material='" + material + '\'' +
-                    ", Price=₹" + price +
-                    '}';
-        }
+    public Football(String brand, double size, boolean isFIFAApproved) {
+        this.brand = brand;
+        this.size = size;
+        this.isFIFAApproved = isFIFAApproved;
     }
 
+    @Override
+    public String toString() {
+        return "Football{" +
+                "Brand='" + brand + '\'' +
+                ", Size=" + size +
+                ", FIFA Approved=" + (isFIFAApproved ? "Yes" : "No") +
+                '}';
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("Default hashcode: " + super.hashCode());
+        return 9090;
+    }
+}

@@ -1,26 +1,28 @@
 package com.xworkz.toString.internal;
 
+public class Lion {
+    private String type;
+    private int age;
+    private String origin;
 
-    public class Lion {
-        private String name;
-        private int age;
-        private String gender;
-        private String origin;
-
-        public Lion(String name, int age, String gender, String origin) {
-            this.name = name;
-            this.age = age;
-            this.gender = gender;
-            this.origin = origin;
-        }
-
-        @Override
-        public String toString() {
-            return "Lion{" +
-                    "Name='" + name + '\'' +
-                    ", Age=" + age +
-                    ", Gender='" + gender + '\'' +
-                    ", Origin='" + origin + '\'' +
-                    '}';
-        }
+    public Lion(String type, int age, String origin) {
+        this.type = type;
+        this.age = age;
+        this.origin = origin;
     }
+
+    @Override
+    public String toString() {
+        return "Lion{" +
+                "Type='" + type + '\'' +
+                ", Age=" + age +
+                ", Origin='" + origin + '\'' +
+                '}';
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("Default hashcode: " + super.hashCode());
+        return 20020;
+    }
+}

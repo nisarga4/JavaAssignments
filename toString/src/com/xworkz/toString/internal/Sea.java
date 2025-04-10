@@ -1,26 +1,28 @@
 package com.xworkz.toString.internal;
 
+public class Sea {
+    private String name;
+    private double depth; // in meters
+    private boolean salty;
 
-    public class Sea {
-        private String name;
-        private String location;
-        private double area; //
-        private int averageDepth;
-
-        public Sea(String name, String location, double area, int averageDepth) {
-            this.name = name;
-            this.location = location;
-            this.area = area;
-            this.averageDepth = averageDepth;
-        }
-
-        @Override
-        public String toString() {
-            return "Sea{" +
-                    "Name='" + name + '\'' +
-                    ", Location='" + location + '\'' +
-                    ", Area=" + area + " sq.km" +
-                    ", AverageDepth=" + averageDepth + " m" +
-                    '}';
-        }
+    public Sea(String name, double depth, boolean salty) {
+        this.name = name;
+        this.depth = depth;
+        this.salty = salty;
     }
+
+    @Override
+    public String toString() {
+        return "Sea{" +
+                "Name='" + name + '\'' +
+                ", Depth=" + depth + "m" +
+                ", Salty=" + (salty ? "Yes" : "No") +
+                '}';
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("Default hashcode: " + super.hashCode());
+        return 34034;
+    }
+}

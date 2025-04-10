@@ -1,26 +1,28 @@
 package com.xworkz.toString.internal;
 
 public class Book {
-        private String title;
-        private String author;
-        private String genre;
-        private double price;
+    private String title;
+    private String author;
+    private double price;
 
-        public Book(String title, String author, String genre, double price) {
-            this.title = title;
-            this.author = author;
-            this.genre = genre;
-            this.price = price;
-        }
-
-        @Override
-        public String toString() {
-            return "Book{" +
-                    "Title='" + title + '\'' +
-                    ", Author='" + author + '\'' +
-                    ", Genre='" + genre + '\'' +
-                    ", Price=₹" + price +
-                    '}';
-        }
+    public Book(String title, String author, double price) {
+        this.title = title;
+        this.author = author;
+        this.price = price;
     }
 
+    @Override
+    public String toString() {
+        return "Book{" +
+                "Title='" + title + '\'' +
+                ", Author='" + author + '\'' +
+                ", Price=" + price + " INR" +
+                '}';
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("Default hashcode: " + super.hashCode());
+        return 888;
+    }
+}

@@ -1,24 +1,28 @@
 package com.xworkz.toString.internal;
-    public class Sun {
-        private String type;
-        private double diameter; // in kilometers
-        private double temperature; // in Kelvin
-        private boolean isVisible;
 
-        public Sun(String type, double diameter, double temperature, boolean isVisible) {
-            this.type = type;
-            this.diameter = diameter;
-            this.temperature = temperature;
-            this.isVisible = isVisible;
-        }
+public class Sun {
+    private String type;
+    private double temperature;
+    private boolean visible;
 
-        @Override
-        public String toString() {
-            return "Sun{" +
-                    "Type='" + type + '\'' +
-                    ", Diameter=" + diameter + " km" +
-                    ", Temperature=" + temperature + " K" +
-                    ", IsVisible=" + (isVisible ? "Yes" : "No") +
-                    '}';
-        }
+    public Sun(String type, double temperature, boolean visible) {
+        this.type = type;
+        this.temperature = temperature;
+        this.visible = visible;
     }
+
+    @Override
+    public String toString() {
+        return "Sun{" +
+                "Type='" + type + '\'' +
+                ", Temperature=" + temperature + "K" +
+                ", Visible=" + (visible ? "Yes" : "No") +
+                '}';
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("Default hashcode: " + super.hashCode());
+        return 39039;
+    }
+}

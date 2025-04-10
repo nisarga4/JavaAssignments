@@ -1,25 +1,28 @@
 package com.xworkz.toString.internal;
-    public class Shiva {
-        private String consort;
-        private String weapon;
-        private String abode;
-        private boolean isTridev;
 
-        public Shiva(String consort, String weapon, String abode, boolean isTridev) {
-            this.consort = consort;
-            this.weapon = weapon;
-            this.abode = abode;
-            this.isTridev = isTridev;
-        }
+public class Shiva {
+    private String avatar;
+    private String weapon;
+    private String mount;
 
-        @Override
-        public String toString() {
-            return "Shiva{" +
-                    "Consort='" + consort + '\'' +
-                    ", Weapon='" + weapon + '\'' +
-                    ", Abode='" + abode + '\'' +
-                    ", PartOfTridev=" + (isTridev ? "Yes" : "No") +
-                    '}';
-        }
+    public Shiva(String avatar, String weapon, String mount) {
+        this.avatar = avatar;
+        this.weapon = weapon;
+        this.mount = mount;
     }
 
+    @Override
+    public String toString() {
+        return "Shiva{" +
+                "Avatar='" + avatar + '\'' +
+                ", Weapon='" + weapon + '\'' +
+                ", Mount='" + mount + '\'' +
+                '}';
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("Default hashcode: " + super.hashCode());
+        return 35035;
+    }
+}

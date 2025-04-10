@@ -1,25 +1,28 @@
 package com.xworkz.toString.internal;
 
-    public class Ketchup {
-        private String brand;
-        private String flavor;
-        private boolean isSpicy;
-        private int quantityInMl;
+public class Ketchup {
+    private String brand;
+    private int quantity;
+    private boolean isTomatoBased;
 
-        public Ketchup(String brand, String flavor, boolean isSpicy, int quantityInMl) {
-            this.brand = brand;
-            this.flavor = flavor;
-            this.isSpicy = isSpicy;
-            this.quantityInMl = quantityInMl;
-        }
-
-        @Override
-        public String toString() {
-            return "Ketchup{" +
-                    "Brand='" + brand + '\'' +
-                    ", Flavor='" + flavor + '\'' +
-                    ", Spicy=" + (isSpicy ? "Yes" : "No") +
-                    ", Quantity=" + quantityInMl + "ml" +
-                    '}';
-        }
+    public Ketchup(String brand, int quantity, boolean isTomatoBased) {
+        this.brand = brand;
+        this.quantity = quantity;
+        this.isTomatoBased = isTomatoBased;
     }
+
+    @Override
+    public String toString() {
+        return "Ketchup{" +
+                "Brand='" + brand + '\'' +
+                ", Quantity=" + quantity + "ml" +
+                ", TomatoBased=" + (isTomatoBased ? "Yes" : "No") +
+                '}';
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("Default hashcode: " + super.hashCode());
+        return 17017;
+    }
+}

@@ -1,12 +1,17 @@
 package com.xworkz.toString.external;
+
 import com.xworkz.toString.internal.Elephant;
 
-    public class ElephantRunner {
-        public static void main(String[] args) {
-            Elephant elephant1 = new Elephant("Appu", 25, 5400.0, "Karnataka");
-            Elephant elephant2 = new Elephant("Gaja", 30, 5800.5, "Kerala");
+public class ElephantRunner {
+    public static void main(String[] args) {
+        Elephant e1 = new Elephant("Appu", 2.9, true);
+        Elephant e2 = new Elephant("Ramu", 3.2, false);
 
-            System.out.println(elephant1);
-            System.out.println(elephant2);
-        }
+        System.out.println(e1);
+        System.out.println(e2);
+
+        System.out.println("HashCode1: " + e1.hashCode());
+        System.out.println("HashCode2: " + e2.hashCode());
+        System.out.println(new Elephant("Lakshmi", 2.5, true).hashCode());
     }
+}

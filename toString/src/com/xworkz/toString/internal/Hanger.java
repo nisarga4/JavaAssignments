@@ -1,24 +1,28 @@
 package com.xworkz.toString.internal;
-    public class Hanger {
-        private String material;
-        private String type; // e.g., Clothes, Pants, Multi-purpose
-        private boolean isFoldable;
-        private int capacity; // how many clothes it can hold
 
-        public Hanger(String material, String type, boolean isFoldable, int capacity) {
-            this.material = material;
-            this.type = type;
-            this.isFoldable = isFoldable;
-            this.capacity = capacity;
-        }
+public class Hanger {
+    private String material;
+    private String type;
+    private boolean isAdjustable;
 
-        @Override
-        public String toString() {
-            return "Hanger{" +
-                    "Material='" + material + '\'' +
-                    ", Type='" + type + '\'' +
-                    ", Foldable=" + (isFoldable ? "Yes" : "No") +
-                    ", Capacity=" + capacity +
-                    '}';
-        }
+    public Hanger(String material, String type, boolean isAdjustable) {
+        this.material = material;
+        this.type = type;
+        this.isAdjustable = isAdjustable;
     }
+
+    @Override
+    public String toString() {
+        return "Hanger{" +
+                "Material='" + material + '\'' +
+                ", Type='" + type + '\'' +
+                ", Adjustable=" + (isAdjustable ? "Yes" : "No") +
+                '}';
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("Default hashcode: " + super.hashCode());
+        return 11011;
+    }
+}

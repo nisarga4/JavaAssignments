@@ -1,24 +1,28 @@
 package com.xworkz.toString.internal;
-    public class Krishna {
-        private String placeOfBirth;
-        private String motherName;
-        private String weapon;
-        private boolean isAvatarOfVishnu;
 
-        public Krishna(String placeOfBirth, String motherName, String weapon, boolean isAvatarOfVishnu) {
-            this.placeOfBirth = placeOfBirth;
-            this.motherName = motherName;
-            this.weapon = weapon;
-            this.isAvatarOfVishnu = isAvatarOfVishnu;
-        }
+public class Krishna {
+    private String avatar;
+    private String weapon;
+    private String location;
 
-        @Override
-        public String toString() {
-            return "Krishna{" +
-                    "PlaceOfBirth='" + placeOfBirth + '\'' +
-                    ", MotherName='" + motherName + '\'' +
-                    ", Weapon='" + weapon + '\'' +
-                    ", AvatarOfVishnu=" + (isAvatarOfVishnu ? "Yes" : "No") +
-                    '}';
-        }
+    public Krishna(String avatar, String weapon, String location) {
+        this.avatar = avatar;
+        this.weapon = weapon;
+        this.location = location;
     }
+
+    @Override
+    public String toString() {
+        return "Krishna{" +
+                "Avatar='" + avatar + '\'' +
+                ", Weapon='" + weapon + '\'' +
+                ", Location='" + location + '\'' +
+                '}';
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("Default hashcode: " + super.hashCode());
+        return 18018;
+    }
+}

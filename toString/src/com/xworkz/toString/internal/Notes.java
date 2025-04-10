@@ -1,24 +1,28 @@
 package com.xworkz.toString.internal;
-    public class Notes {
-        private String subject;
-        private String author;
-        private int numberOfPages;
-        private boolean isHandwritten;
 
-        public Notes(String subject, String author, int numberOfPages, boolean isHandwritten) {
-            this.subject = subject;
-            this.author = author;
-            this.numberOfPages = numberOfPages;
-            this.isHandwritten = isHandwritten;
-        }
+public class Notes {
+    private String subject;
+    private int pages;
+    private boolean handwritten;
 
-        @Override
-        public String toString() {
-            return "Notes{" +
-                    "Subject='" + subject + '\'' +
-                    ", Author='" + author + '\'' +
-                    ", Pages=" + numberOfPages +
-                    ", Handwritten=" + (isHandwritten ? "Yes" : "No") +
-                    '}';
-        }
+    public Notes(String subject, int pages, boolean handwritten) {
+        this.subject = subject;
+        this.pages = pages;
+        this.handwritten = handwritten;
     }
+
+    @Override
+    public String toString() {
+        return "Notes{" +
+                "Subject='" + subject + '\'' +
+                ", Pages=" + pages +
+                ", Handwritten=" + (handwritten ? "Yes" : "No") +
+                '}';
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("Default hashcode: " + super.hashCode());
+        return 26026;
+    }
+}

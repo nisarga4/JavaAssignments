@@ -1,25 +1,28 @@
 package com.xworkz.toString.internal;
 
-    public class SugarFree {
-        private String brand;
-        private String type;
-        private int quantity; // number of tablets or grams
-        private boolean suitableForDiabetics;
+public class SugarFree {
+    private String type;
+    private int tablets;
+    private boolean suitableForDiabetic;
 
-        public SugarFree(String brand, String type, int quantity, boolean suitableForDiabetics) {
-            this.brand = brand;
-            this.type = type;
-            this.quantity = quantity;
-            this.suitableForDiabetics = suitableForDiabetics;
-        }
-
-        @Override
-        public String toString() {
-            return "SugarFree{" +
-                    "Brand='" + brand + '\'' +
-                    ", Type='" + type + '\'' +
-                    ", Quantity=" + quantity +
-                    ", SuitableForDiabetics=" + (suitableForDiabetics ? "Yes" : "No") +
-                    '}';
-        }
+    public SugarFree(String type, int tablets, boolean suitableForDiabetic) {
+        this.type = type;
+        this.tablets = tablets;
+        this.suitableForDiabetic = suitableForDiabetic;
     }
+
+    @Override
+    public String toString() {
+        return "SugarFree{" +
+                "Type='" + type + '\'' +
+                ", Tablets=" + tablets +
+                ", SuitableForDiabetic=" + (suitableForDiabetic ? "Yes" : "No") +
+                '}';
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("Default hashcode: " + super.hashCode());
+        return 38038;
+    }
+}

@@ -1,24 +1,28 @@
 package com.xworkz.toString.internal;
-    public class MangoJuice {
-        private String brand;
-        private int quantityInMl;
-        private boolean isSugarFree;
-        private double price;
 
-        public MangoJuice(String brand, int quantityInMl, boolean isSugarFree, double price) {
-            this.brand = brand;
-            this.quantityInMl = quantityInMl;
-            this.isSugarFree = isSugarFree;
-            this.price = price;
-        }
+public class MangoJuice {
+    private String brand;
+    private int volume;
+    private boolean withPulp;
 
-        @Override
-        public String toString() {
-            return "MangoJuice{" +
-                    "Brand='" + brand + '\'' +
-                    ", Quantity=" + quantityInMl + "ml" +
-                    ", SugarFree=" + (isSugarFree ? "Yes" : "No") +
-                    ", Price=₹" + price +
-                    '}';
-        }
+    public MangoJuice(String brand, int volume, boolean withPulp) {
+        this.brand = brand;
+        this.volume = volume;
+        this.withPulp = withPulp;
     }
+
+    @Override
+    public String toString() {
+        return "MangoJuice{" +
+                "Brand='" + brand + '\'' +
+                ", Volume=" + volume + "ml" +
+                ", WithPulp=" + (withPulp ? "Yes" : "No") +
+                '}';
+    }
+
+    @Override
+    public int hashCode() {
+        System.out.println("Default hashcode: " + super.hashCode());
+        return 22022;
+    }
+}
