@@ -4,14 +4,18 @@ import com.xworkz.toString.internal.Bisket;
 
 public class BisketRunner {
     public static void main(String[] args) {
-        Bisket b1 = new Bisket("Chocolate", 10, true);
-        Bisket b2 = new Bisket("Salty", 12, false);
+        Bisket bisket1 = new Bisket("Chocolate", 10, 250.0);
+        System.out.println(bisket1);
 
-        System.out.println(b1);
-        System.out.println(b2);
+        int hash = bisket1.hashCode();
+        System.out.println("Hash Code: " + hash);
+        System.out.println("Original Code: " + System.identityHashCode(bisket1));
 
-        System.out.println("HashCode1: " + b1.hashCode());
-        System.out.println("HashCode2: " + b2.hashCode());
-        System.out.println(new Bisket("Butter", 8, true).hashCode());
+        Bisket bisket2 = new Bisket("Chocolate", 10, 250.0);
+        Bisket bisket3 = new Bisket("Vanilla", 15, 300.0);
+
+        System.out.println("Checking same location: " + (bisket2 == bisket3));
+        boolean same = bisket2.equals(bisket3);
+        System.out.println("Bisket2 is same as Bisket3: " + same);
     }
 }

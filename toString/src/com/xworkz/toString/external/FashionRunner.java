@@ -4,14 +4,20 @@ import com.xworkz.toString.internal.Fashion;
 
 public class FashionRunner {
     public static void main(String[] args) {
-        Fashion f1 = new Fashion("Boho", "Summer", true);
-        Fashion f2 = new Fashion("Formal", "Winter", false);
+        Fashion fashion1 = new Fashion("Shirt", "Nike", 49.99);
+        System.out.println(fashion1);
 
-        System.out.println(f1);
-        System.out.println(f2);
+        int hash = fashion1.hashCode();
+        System.out.println("Hash Code: " + hash);
+        System.out.println("Original Code: " + System.identityHashCode(fashion1));
 
-        System.out.println("HashCode1: " + f1.hashCode());
-        System.out.println("HashCode2: " + f2.hashCode());
-        System.out.println(new Fashion("Casual", "Spring", true).hashCode());
+        Fashion fashion2 = new Fashion("Shirt", "Nike", 49.99);
+        Fashion fashion3 = new Fashion("Pants", "Adidas", 59.99);
+
+        System.out.println("Checking same location: " + (fashion1 == fashion2));
+        boolean same = fashion1.equals(fashion2);
+        System.out.println("Fashion1 is same as Fashion2: " + same);
+
+        System.out.println("Fashion1 is same as Fashion3: " + fashion1.equals(fashion3));
     }
 }

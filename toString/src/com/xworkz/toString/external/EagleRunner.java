@@ -4,14 +4,20 @@ import com.xworkz.toString.internal.Eagle;
 
 public class EagleRunner {
     public static void main(String[] args) {
-        Eagle e1 = new Eagle("Golden", 2.1, false);
-        Eagle e2 = new Eagle("Bald", 2.3, true);
+        Eagle eagle1 = new Eagle("Golden Eagle", 2.3, "Mountains");
+        System.out.println(eagle1);
 
-        System.out.println(e1);
-        System.out.println(e2);
+        int hash = eagle1.hashCode();
+        System.out.println("Hash Code: " + hash);
+        System.out.println("Original Code: " + System.identityHashCode(eagle1));
 
-        System.out.println("HashCode1: " + e1.hashCode());
-        System.out.println("HashCode2: " + e2.hashCode());
-        System.out.println(new Eagle("Sea Eagle", 2.5, false).hashCode());
+        Eagle eagle2 = new Eagle("Golden Eagle", 2.3, "Mountains");
+        Eagle eagle3 = new Eagle("Bald Eagle", 2.4, "Forests");
+
+        System.out.println("Checking same location: " + (eagle1 == eagle2));
+        boolean same = eagle1.equals(eagle2);
+        System.out.println("Eagle1 is same as Eagle2: " + same);
+
+        System.out.println("Eagle1 is same as Eagle3: " + eagle1.equals(eagle3));
     }
 }

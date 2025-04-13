@@ -1,28 +1,40 @@
 package com.xworkz.toString.internal;
 
 public class Nail {
-    private String type;
+    private String material;
     private double length;
-    private boolean isRustProof;
+    private double diameter;
 
-    public Nail(String type, double length, boolean isRustProof) {
-        this.type = type;
+    public Nail(String material, double length, double diameter) {
+        this.material = material;
         this.length = length;
-        this.isRustProof = isRustProof;
+        this.diameter = diameter;
     }
 
     @Override
     public String toString() {
         return "Nail{" +
-                "Type='" + type + '\'' +
+                "Material='" + material + '\'' +
                 ", Length=" + length + "cm" +
-                ", RustProof=" + (isRustProof ? "Yes" : "No") +
+                ", Diameter=" + diameter + "mm" +
                 '}';
     }
 
     @Override
     public int hashCode() {
-        System.out.println("Default hashcode: " + super.hashCode());
-        return 60303;
+        return material.hashCode() + (int) length + (int) diameter;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null) {
+            if (obj instanceof Nail) {
+                Nail otherNail = (Nail) obj;
+                return this.material.equals(otherNail.material) &&
+                        this.length == otherNail.length &&
+                        this.diameter == otherNail.diameter;
+            }
+        }
+        return false;
     }
 }

@@ -4,14 +4,20 @@ import com.xworkz.toString.internal.Panipuri;
 
 public class PanipuriRunner {
     public static void main(String[] args) {
-        Panipuri p1 = new Panipuri("Mint", true, 6);
-        Panipuri p2 = new Panipuri("Sweet", false, 8);
+        Panipuri panipuri1 = new Panipuri("Tamarind", 10, "Small");
+        System.out.println(panipuri1);
 
-        System.out.println(p1);
-        System.out.println(p2);
+        int hash = panipuri1.hashCode();
+        System.out.println("Hash Code: " + hash);
 
-        System.out.println("HashCode1: " + p1.hashCode());
-        System.out.println("HashCode2: " + p2.hashCode());
-        System.out.println(new Panipuri("Tamarind", true, 10).hashCode());
+        Panipuri panipuri2 = new Panipuri("Tamarind", 10, "Small");
+        Panipuri panipuri3 = new Panipuri("Mint", 15, "Medium");
+
+        System.out.println("Checking same location: " + (panipuri1 == panipuri2));
+        boolean same = panipuri1.equals(panipuri2);
+        System.out.println("Panipuri1 is same as Panipuri2: " + same);
+
+        boolean different = panipuri1.equals(panipuri3);
+        System.out.println("Panipuri1 is same as Panipuri3: " + different);
     }
 }

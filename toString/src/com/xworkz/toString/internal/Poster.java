@@ -1,28 +1,40 @@
 package com.xworkz.toString.internal;
 
 public class Poster {
-    private String theme;
-    private String size;
-    private boolean laminated;
+    private String title;
+    private String artist;
+    private int year;
 
-    public Poster(String theme, String size, boolean laminated) {
-        this.theme = theme;
-        this.size = size;
-        this.laminated = laminated;
+    public Poster(String title, String artist, int year) {
+        this.title = title;
+        this.artist = artist;
+        this.year = year;
     }
 
     @Override
     public String toString() {
         return "Poster{" +
-                "Theme='" + theme + '\'' +
-                ", Size='" + size + '\'' +
-                ", Laminated=" + (laminated ? "Yes" : "No") +
+                "Title='" + title + '\'' +
+                ", Artist='" + artist + '\'' +
+                ", Year=" + year +
                 '}';
     }
 
     @Override
     public int hashCode() {
-        System.out.println("Default hashcode: " + super.hashCode());
-        return 30030;
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null) {
+            if (obj instanceof Poster) {
+                Poster otherPoster = (Poster) obj;
+                return this.title.equals(otherPoster.title) &&
+                        this.artist.equals(otherPoster.artist) &&
+                        this.year == otherPoster.year;
+            }
+        }
+        return false;
     }
 }

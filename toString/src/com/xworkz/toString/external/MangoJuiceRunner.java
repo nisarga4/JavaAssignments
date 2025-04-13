@@ -4,14 +4,20 @@ import com.xworkz.toString.internal.MangoJuice;
 
 public class MangoJuiceRunner {
     public static void main(String[] args) {
-        MangoJuice j1 = new MangoJuice("Maaza", 250, true);
-        MangoJuice j2 = new MangoJuice("Frooti", 200, false);
+        MangoJuice juice1 = new MangoJuice("Tropicana", 1.0, true);
+        System.out.println(juice1);
 
-        System.out.println(j1);
-        System.out.println(j2);
+        int hash = juice1.hashCode();
+        System.out.println("Hash Code: " + hash);
+        System.out.println("Original Code: " + System.identityHashCode(juice1));
 
-        System.out.println("HashCode1: " + j1.hashCode());
-        System.out.println("HashCode2: " + j2.hashCode());
-        System.out.println(new MangoJuice("Slice", 300, true).hashCode());
+        MangoJuice juice2 = new MangoJuice("Tropicana", 1.0, true);
+        MangoJuice juice3 = new MangoJuice("Real", 0.5, false);
+
+        System.out.println("Checking same location: " + (juice1 == juice2));
+        boolean same = juice1.equals(juice2);
+        System.out.println("Juice1 is same as Juice2: " + same);
+
+        System.out.println("Juice1 is same as Juice3: " + juice1.equals(juice3));
     }
 }

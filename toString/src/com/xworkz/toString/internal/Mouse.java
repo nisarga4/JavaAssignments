@@ -2,27 +2,37 @@ package com.xworkz.toString.internal;
 
 public class Mouse {
     private String brand;
-    private boolean wireless;
-    private int dpi;
+    private String type;
+    private double price;
 
-    public Mouse(String brand, boolean wireless, int dpi) {
+    public Mouse(String brand, String type, double price) {
         this.brand = brand;
-        this.wireless = wireless;
-        this.dpi = dpi;
+        this.type = type;
+        this.price = price;
     }
 
     @Override
     public String toString() {
-        return "Mouse{" +
-                "Brand='" + brand + '\'' +
-                ", Wireless=" + (wireless ? "Yes" : "No") +
-                ", DPI=" + dpi +
-                '}';
+        return "Mouse{Brand='" + brand + "', Type='" + type + "', Price=" + price + "}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("Default hashcode: " + super.hashCode());
-        return 53053;
+        System.out.println("Default hash code: " + super.hashCode());
+        return 503;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null) {
+            if (obj instanceof Mouse) {
+                Mouse mouse1 = this;
+                Mouse mouse2 = (Mouse) obj;
+                if (mouse1.brand.equals(mouse2.brand) && mouse1.type.equals(mouse2.type) && mouse1.price == mouse2.price) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }

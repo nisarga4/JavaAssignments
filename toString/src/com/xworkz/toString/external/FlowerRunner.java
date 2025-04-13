@@ -4,14 +4,20 @@ import com.xworkz.toString.internal.Flower;
 
 public class FlowerRunner {
     public static void main(String[] args) {
-        Flower f1 = new Flower("Rose", "Red", true);
-        Flower f2 = new Flower("Lily", "White", false);
+        Flower flower1 = new Flower("Rose", "Red", 50.0);
+        System.out.println(flower1);
 
-        System.out.println(f1);
-        System.out.println(f2);
+        int hash = flower1.hashCode();
+        System.out.println("Hash Code: " + hash);
+        System.out.println("Original Code: " + System.identityHashCode(flower1));
 
-        System.out.println("HashCode1: " + f1.hashCode());
-        System.out.println("HashCode2: " + f2.hashCode());
-        System.out.println(new Flower("Tulip", "Yellow", true).hashCode());
+        Flower flower2 = new Flower("Rose", "Red", 50.0);
+        Flower flower3 = new Flower("Tulip", "Yellow", 30.0);
+
+        System.out.println("Checking same location: " + (flower1 == flower2));
+        boolean same = flower1.equals(flower2);
+        System.out.println("Flower1 is same as Flower2: " + same);
+
+        System.out.println("Flower1 is same as Flower3: " + flower1.equals(flower3));
     }
 }

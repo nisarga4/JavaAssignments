@@ -4,14 +4,20 @@ import com.xworkz.toString.internal.Hanger;
 
 public class HangerRunner {
     public static void main(String[] args) {
-        Hanger h1 = new Hanger("Plastic", "Shirt", true);
-        Hanger h2 = new Hanger("Wood", "Coat", false);
+        Hanger hanger1 = new Hanger("Wood", "Brown", 40);
+        System.out.println(hanger1);
 
-        System.out.println(h1);
-        System.out.println(h2);
+        int hash = hanger1.hashCode();
+        System.out.println("Hash Code: " + hash);
+        System.out.println("Original Code: " + System.identityHashCode(hanger1));
 
-        System.out.println("HashCode1: " + h1.hashCode());
-        System.out.println("HashCode2: " + h2.hashCode());
-        System.out.println(new Hanger("Metal", "Pant", true).hashCode());
+        Hanger hanger2 = new Hanger("Wood", "Brown", 40);
+        Hanger hanger3 = new Hanger("Plastic", "Black", 30);
+
+        System.out.println("Checking same location: " + (hanger1 == hanger2));
+        boolean same = hanger1.equals(hanger2);
+        System.out.println("Hanger1 is same as Hanger2: " + same);
+
+        System.out.println("Hanger1 is same as Hanger3: " + hanger1.equals(hanger3));
     }
 }

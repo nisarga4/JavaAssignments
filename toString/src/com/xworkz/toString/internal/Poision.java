@@ -1,28 +1,40 @@
 package com.xworkz.toString.internal;
 
 public class Poision {
-    private String type;
-    private double quantity;
-    private boolean isLethal;
+    private String name;
+    private double toxicityLevel;
+    private String origin;
 
-    public Poision(String type, double quantity, boolean isLethal) {
-        this.type = type;
-        this.quantity = quantity;
-        this.isLethal = isLethal;
+    public Poision(String name, double toxicityLevel, String origin) {
+        this.name = name;
+        this.toxicityLevel = toxicityLevel;
+        this.origin = origin;
     }
 
     @Override
     public String toString() {
-        return "Poision{" +
-                "Type='" + type + '\'' +
-                ", Quantity=" + quantity + "ml" +
-                ", Lethal=" + (isLethal ? "Yes" : "No") +
+        return "Poison{" +
+                "Name='" + name + '\'' +
+                ", Toxicity Level=" + toxicityLevel +
+                ", Origin='" + origin + '\'' +
                 '}';
     }
 
     @Override
     public int hashCode() {
-        System.out.println("Default hashcode: " + super.hashCode());
-        return 90004;
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null) {
+            if (obj instanceof Poision) {
+                Poision otherPoison = (Poision) obj;
+                return this.name.equals(otherPoison.name) &&
+                        this.toxicityLevel == otherPoison.toxicityLevel &&
+                        this.origin.equals(otherPoison.origin);
+            }
+        }
+        return false;
     }
 }

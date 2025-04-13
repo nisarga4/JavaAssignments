@@ -4,14 +4,20 @@ import com.xworkz.toString.internal.Comb;
 
 public class CombRunner {
     public static void main(String[] args) {
-        Comb c1 = new Comb("Plastic", true, "Black");
-        Comb c2 = new Comb("Wood", false, "Brown");
+        Comb comb1 = new Comb("Plastic", 20, "Black");
+        System.out.println(comb1);
 
-        System.out.println(c1);
-        System.out.println(c2);
+        int hash = comb1.hashCode();
+        System.out.println("Hash Code: " + hash);
+        System.out.println("Original Code: " + System.identityHashCode(comb1));
 
-        System.out.println("HashCode1: " + c1.hashCode());
-        System.out.println("HashCode2: " + c2.hashCode());
-        System.out.println(new Comb("Metal", true, "Silver").hashCode());
+        Comb comb2 = new Comb("Plastic", 20, "Black");
+        Comb comb3 = new Comb("Wood", 18, "Brown");
+
+        System.out.println("Checking same location: " + (comb1 == comb2));
+        boolean same = comb1.equals(comb2);
+        System.out.println("Comb1 is same as Comb2: " + same);
+
+        System.out.println("Comb1 is same as Comb3: " + comb1.equals(comb3));
     }
 }

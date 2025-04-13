@@ -4,14 +4,20 @@ import com.xworkz.toString.internal.Ram;
 
 public class RamRunner {
     public static void main(String[] args) {
-        Ram r1 = new Ram("DDR4", 8, 3200);
-        Ram r2 = new Ram("DDR5", 16, 4800);
+        Ram ram1 = new Ram("Corsair Vengeance", 16, "DDR4");
+        System.out.println(ram1);
 
-        System.out.println(r1);
-        System.out.println(r2);
+        int hash = ram1.hashCode();
+        System.out.println("Hash Code: " + hash);
 
-        System.out.println("HashCode1: " + r1.hashCode());
-        System.out.println("HashCode2: " + r2.hashCode());
-        System.out.println(new Ram("DDR3", 4, 1600).hashCode());
+        Ram ram2 = new Ram("Corsair Vengeance", 16, "DDR4");
+        Ram ram3 = new Ram("G.Skill Ripjaws", 8, "DDR4");
+
+        System.out.println("Checking same location: " + (ram1 == ram2));
+        boolean same = ram1.equals(ram2);
+        System.out.println("Ram1 is same as Ram2: " + same);
+
+        boolean different = ram1.equals(ram3);
+        System.out.println("Ram1 is same as Ram3: " + different);
     }
 }

@@ -4,18 +4,20 @@ import com.xworkz.toString.internal.Color;
 
 public class ColorRunner {
     public static void main(String[] args) {
-        Color color1 = new Color("Red", "#FF0000", true);
-        Color color2 = new Color("Cyan", "#00FFFF", false);
-
+        Color color1 = new Color("Red", "#FF0000");
         System.out.println(color1);
-        System.out.println(color2);
 
-        int code1 = color1.hashCode();
-        System.out.println("Code1: " + code1);
+        int hash = color1.hashCode();
+        System.out.println("Hash Code: " + hash);
+        System.out.println("Original Code: " + System.identityHashCode(color1));
 
-        int code2 = color2.hashCode();
-        System.out.println("Code2: " + code2);
+        Color color2 = new Color("Red", "#FF0000");
+        Color color3 = new Color("Blue", "#0000FF");
 
-        System.out.println(new Color("Blue", "#0000FF", true).hashCode());
+        System.out.println("Checking same location: " + (color1 == color2));
+        boolean same = color1.equals(color2);
+        System.out.println("Color1 is same as Color2: " + same);
+
+        System.out.println("Color1 is same as Color3: " + color1.equals(color3));
     }
 }

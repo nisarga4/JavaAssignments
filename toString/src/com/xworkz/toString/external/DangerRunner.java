@@ -4,14 +4,20 @@ import com.xworkz.toString.internal.Danger;
 
 public class DangerRunner {
     public static void main(String[] args) {
-        Danger d1 = new Danger("Fire", 10, false);
-        Danger d2 = new Danger("Electric Shock", 8, true);
+        Danger danger1 = new Danger("Earthquake", 9, "Tectonic Plates Movement");
+        System.out.println(danger1);
 
-        System.out.println(d1);
-        System.out.println(d2);
+        int hash = danger1.hashCode();
+        System.out.println("Hash Code: " + hash);
+        System.out.println("Original Code: " + System.identityHashCode(danger1));
 
-        System.out.println("HashCode1: " + d1.hashCode());
-        System.out.println("HashCode2: " + d2.hashCode());
-        System.out.println(new Danger("Flood", 9, false).hashCode());
+        Danger danger2 = new Danger("Earthquake", 9, "Tectonic Plates Movement");
+        Danger danger3 = new Danger("Flood", 7, "Heavy Rainfall");
+
+        System.out.println("Checking same location: " + (danger1 == danger2));
+        boolean same = danger1.equals(danger2);
+        System.out.println("Danger1 is same as Danger2: " + same);
+
+        System.out.println("Danger1 is same as Danger3: " + danger1.equals(danger3));
     }
 }

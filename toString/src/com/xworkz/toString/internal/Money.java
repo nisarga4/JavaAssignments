@@ -1,28 +1,38 @@
 package com.xworkz.toString.internal;
 
 public class Money {
-    private String currency;
     private double amount;
-    private boolean isDigital;
+    private String currency;
+    private String denomination;
 
-    public Money(String currency, double amount, boolean isDigital) {
-        this.currency = currency;
+    public Money(double amount, String currency, String denomination) {
         this.amount = amount;
-        this.isDigital = isDigital;
+        this.currency = currency;
+        this.denomination = denomination;
     }
 
     @Override
     public String toString() {
-        return "Money{" +
-                "Currency='" + currency + '\'' +
-                ", Amount=" + amount +
-                ", Digital=" + (isDigital ? "Yes" : "No") +
-                '}';
+        return "Money{Amount=" + amount + ", Currency='" + currency + "', Denomination='" + denomination + "'}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("Default hashcode: " + super.hashCode());
-        return 23023;
+        System.out.println("Default hash code: " + super.hashCode());
+        return 801;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null) {
+            if (obj instanceof Money) {
+                Money money1 = this;
+                Money money2 = (Money) obj;
+                if (money1.amount == money2.amount && money1.currency.equals(money2.currency) && money1.denomination.equals(money2.denomination)) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }

@@ -4,18 +4,18 @@ import com.xworkz.toString.internal.Bed;
 
 public class BedRunner {
     public static void main(String[] args) {
-        Bed bed1 = new Bed("King", "Wood", 6.5);
-        Bed bed2 = new Bed("Queen", "Metal", 5.5);
-
+        Bed bed1 = new Bed("Queen", "Wood", true);
         System.out.println(bed1);
-        System.out.println(bed2);
 
-        int code1 = bed1.hashCode();
-        System.out.println("Code1: " + code1);
+        int hash = bed1.hashCode();
+        System.out.println("Hash Code: " + hash);
+        System.out.println("Original Code: " + System.identityHashCode(bed1));
 
-        int code2 = bed2.hashCode();
-        System.out.println("Code2: " + code2);
+        Bed bed2 = new Bed("Queen", "Wood", true);
+        Bed bed3 = new Bed("King", "Metal", false);
 
-        System.out.println(new Bed("Single", "Plastic", 4.0).hashCode());
+        System.out.println("Checking same location: " + (bed2 == bed3));
+        boolean same = bed2.equals(bed3);
+        System.out.println("Bed2 is same as Bed3: " + same);
     }
 }

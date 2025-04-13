@@ -4,14 +4,20 @@ import com.xworkz.toString.internal.Door;
 
 public class DoorRunner {
     public static void main(String[] args) {
-        Door d1 = new Door("Wood", 7.5, false);
-        Door d2 = new Door("Glass", 8.0, true);
+        Door door1 = new Door("Wood", 2.5, "Brown");
+        System.out.println(door1);
 
-        System.out.println(d1);
-        System.out.println(d2);
+        int hash = door1.hashCode();
+        System.out.println("Hash Code: " + hash);
+        System.out.println("Original Code: " + System.identityHashCode(door1));
 
-        System.out.println("HashCode1: " + d1.hashCode());
-        System.out.println("HashCode2: " + d2.hashCode());
-        System.out.println(new Door("Steel", 6.5, false).hashCode());
+        Door door2 = new Door("Wood", 2.5, "Brown");
+        Door door3 = new Door("Steel", 3.0, "Silver");
+
+        System.out.println("Checking same location: " + (door1 == door2));
+        boolean same = door1.equals(door2);
+        System.out.println("Door1 is same as Door2: " + same);
+
+        System.out.println("Door1 is same as Door3: " + door1.equals(door3));
     }
 }

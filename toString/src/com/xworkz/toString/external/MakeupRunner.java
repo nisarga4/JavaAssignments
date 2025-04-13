@@ -4,14 +4,20 @@ import com.xworkz.toString.internal.Makeup;
 
 public class MakeupRunner {
     public static void main(String[] args) {
-        Makeup m1 = new Makeup("Lipstick", "Maybelline", 499.0);
-        Makeup m2 = new Makeup("Foundation", "Lakme", 699.0);
+        Makeup makeup1 = new Makeup("Lakme", "Foundation", 499.99);
+        System.out.println(makeup1);
 
-        System.out.println(m1);
-        System.out.println(m2);
+        int hash = makeup1.hashCode();
+        System.out.println("Hash Code: " + hash);
+        System.out.println("Original Code: " + System.identityHashCode(makeup1));
 
-        System.out.println("HashCode1: " + m1.hashCode());
-        System.out.println("HashCode2: " + m2.hashCode());
-        System.out.println(new Makeup("Mascara", "L'Oreal", 599.0).hashCode());
+        Makeup makeup2 = new Makeup("Lakme", "Foundation", 499.99);
+        Makeup makeup3 = new Makeup("Maybelline", "Lipstick", 299.99);
+
+        System.out.println("Checking same location: " + (makeup1 == makeup2));
+        boolean same = makeup1.equals(makeup2);
+        System.out.println("Makeup1 is same as Makeup2: " + same);
+
+        System.out.println("Makeup1 is same as Makeup3: " + makeup1.equals(makeup3));
     }
 }

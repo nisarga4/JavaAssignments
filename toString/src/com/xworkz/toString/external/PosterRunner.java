@@ -4,14 +4,20 @@ import com.xworkz.toString.internal.Poster;
 
 public class PosterRunner {
     public static void main(String[] args) {
-        Poster p1 = new Poster("Motivational", "A3", true);
-        Poster p2 = new Poster("Movie", "A2", false);
+        Poster poster1 = new Poster("Starry Night", "Vincent van Gogh", 1889);
+        System.out.println(poster1);
 
-        System.out.println(p1);
-        System.out.println(p2);
+        int hash = poster1.hashCode();
+        System.out.println("Hash Code: " + hash);
 
-        System.out.println("HashCode1: " + p1.hashCode());
-        System.out.println("HashCode2: " + p2.hashCode());
-        System.out.println(new Poster("Nature", "A4", true).hashCode());
+        Poster poster2 = new Poster("Starry Night", "Vincent van Gogh", 1889);
+        Poster poster3 = new Poster("Mona Lisa", "Leonardo da Vinci", 1503);
+
+        System.out.println("Checking same location: " + (poster1 == poster2));
+        boolean same = poster1.equals(poster2);
+        System.out.println("Poster1 is same as Poster2: " + same);
+
+        boolean different = poster1.equals(poster3);
+        System.out.println("Poster1 is same as Poster3: " + different);
     }
 }

@@ -4,14 +4,21 @@ import com.xworkz.toString.internal.Temple;
 
 public class TempleRunner {
     public static void main(String[] args) {
-        Temple t1 = new Temple("Virupaksha", "Hampi", true);
-        Temple t2 = new Temple("Meenakshi", "Madurai", true);
+        Temple temple1 = new Temple("Golden Temple", "Amritsar", 1581);
+        System.out.println(temple1);
 
-        System.out.println(t1);
-        System.out.println(t2);
+        int hash = temple1.hashCode();
+        System.out.println("Hash Code: " + hash);
+        System.out.println("Original Code: " + System.identityHashCode(temple1));
 
-        System.out.println("HashCode1: " + t1.hashCode());
-        System.out.println("HashCode2: " + t2.hashCode());
-        System.out.println(new Temple("Iskcon", "Bangalore", false).hashCode());
+        Temple temple2 = new Temple("Golden Temple", "Amritsar", 1581);
+        Temple temple3 = new Temple("Kashi Vishwanath", "Varanasi", 1780);
+
+        System.out.println("Checking same location: " + (temple1 == temple2));
+        boolean same = temple1.equals(temple2);
+        System.out.println("Temple1 is same as Temple2: " + same);
+
+        boolean sameTemple3 = temple1.equals(temple3);
+        System.out.println("Temple1 is same as Temple3: " + sameTemple3);
     }
 }

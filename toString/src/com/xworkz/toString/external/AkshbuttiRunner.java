@@ -1,5 +1,4 @@
-
-    package com.xworkz.toString.external;
+package com.xworkz.toString.external;
 
 import com.xworkz.toString.internal.Akshbutti;
 

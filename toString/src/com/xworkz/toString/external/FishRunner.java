@@ -4,14 +4,20 @@ import com.xworkz.toString.internal.Fish;
 
 public class FishRunner {
     public static void main(String[] args) {
-        Fish f1 = new Fish("Salmon", 2.5, true);
-        Fish f2 = new Fish("Tuna", 3.0, false);
+        Fish fish1 = new Fish("Salmon", 5.2, "River");
+        System.out.println(fish1);
 
-        System.out.println(f1);
-        System.out.println(f2);
+        int hash = fish1.hashCode();
+        System.out.println("Hash Code: " + hash);
+        System.out.println("Original Code: " + System.identityHashCode(fish1));
 
-        System.out.println("HashCode1: " + f1.hashCode());
-        System.out.println("HashCode2: " + f2.hashCode());
-        System.out.println(new Fish("Catfish", 1.8, true).hashCode());
+        Fish fish2 = new Fish("Salmon", 5.2, "River");
+        Fish fish3 = new Fish("Trout", 3.0, "Lake");
+
+        System.out.println("Checking same location: " + (fish1 == fish2));
+        boolean same = fish1.equals(fish2);
+        System.out.println("Fish1 is same as Fish2: " + same);
+
+        System.out.println("Fish1 is same as Fish3: " + fish1.equals(fish3));
     }
 }

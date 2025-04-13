@@ -4,14 +4,20 @@ import com.xworkz.toString.internal.Chain;
 
 public class ChainRunner {
     public static void main(String[] args) {
-        Chain c1 = new Chain("Silver", 45.0, true);
-        Chain c2 = new Chain("Steel", 50.0, false);
+        Chain chain1 = new Chain("Gold", 45.0, "Yellow");
+        System.out.println(chain1);
 
-        System.out.println(c1);
-        System.out.println(c2);
+        int hash = chain1.hashCode();
+        System.out.println("Hash Code: " + hash);
+        System.out.println("Original Code: " + System.identityHashCode(chain1));
 
-        System.out.println("HashCode1: " + c1.hashCode());
-        System.out.println("HashCode2: " + c2.hashCode());
-        System.out.println(new Chain("Gold", 40.0, true).hashCode());
+        Chain chain2 = new Chain("Gold", 45.0, "Yellow");
+        Chain chain3 = new Chain("Silver", 50.0, "Gray");
+
+        System.out.println("Checking same location: " + (chain1 == chain2));
+        boolean same = chain1.equals(chain2);
+        System.out.println("Chain1 is same as Chain2: " + same);
+
+        System.out.println("Chain1 is same as Chain3: " + chain1.equals(chain3));
     }
 }

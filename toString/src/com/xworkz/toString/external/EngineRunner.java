@@ -4,14 +4,20 @@ import com.xworkz.toString.internal.Engine;
 
 public class EngineRunner {
     public static void main(String[] args) {
-        Engine e1 = new Engine("Diesel", 120, false);
-        Engine e2 = new Engine("Electric", 150, true);
+        Engine engine1 = new Engine("V8", 500, 450.5);
+        System.out.println(engine1);
 
-        System.out.println(e1);
-        System.out.println(e2);
+        int hash = engine1.hashCode();
+        System.out.println("Hash Code: " + hash);
+        System.out.println("Original Code: " + System.identityHashCode(engine1));
 
-        System.out.println("HashCode1: " + e1.hashCode());
-        System.out.println("HashCode2: " + e2.hashCode());
-        System.out.println(new Engine("Petrol", 100, false).hashCode());
+        Engine engine2 = new Engine("V8", 500, 450.5);
+        Engine engine3 = new Engine("V6", 400, 350.0);
+
+        System.out.println("Checking same location: " + (engine1 == engine2));
+        boolean same = engine1.equals(engine2);
+        System.out.println("Engine1 is same as Engine2: " + same);
+
+        System.out.println("Engine1 is same as Engine3: " + engine1.equals(engine3));
     }
 }

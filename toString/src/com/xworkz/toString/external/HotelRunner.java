@@ -4,14 +4,20 @@ import com.xworkz.toString.internal.Hotel;
 
 public class HotelRunner {
     public static void main(String[] args) {
-        Hotel h1 = new Hotel("Taj", 5, true);
-        Hotel h2 = new Hotel("Ginger", 3, false);
+        Hotel hotel1 = new Hotel("Marriott", "New York", 5);
+        System.out.println(hotel1);
 
-        System.out.println(h1);
-        System.out.println(h2);
+        int hash = hotel1.hashCode();
+        System.out.println("Hash Code: " + hash);
+        System.out.println("Original Code: " + System.identityHashCode(hotel1));
 
-        System.out.println("HashCode1: " + h1.hashCode());
-        System.out.println("HashCode2: " + h2.hashCode());
-        System.out.println(new Hotel("Marriott", 4, true).hashCode());
+        Hotel hotel2 = new Hotel("Marriott", "New York", 5);
+        Hotel hotel3 = new Hotel("Hilton", "Los Angeles", 4);
+
+        System.out.println("Checking same location: " + (hotel1 == hotel2));
+        boolean same = hotel1.equals(hotel2);
+        System.out.println("Hotel1 is same as Hotel2: " + same);
+
+        System.out.println("Hotel1 is same as Hotel3: " + hotel1.equals(hotel3));
     }
 }

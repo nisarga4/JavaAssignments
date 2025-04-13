@@ -4,14 +4,21 @@ import com.xworkz.toString.internal.SugarFree;
 
 public class SugarFreeRunner {
     public static void main(String[] args) {
-        SugarFree s1 = new SugarFree("Gold", 500, true);
-        SugarFree s2 = new SugarFree("Green", 300, true);
+        SugarFree sugarFree1 = new SugarFree("Stevia", "Mint", 100);
+        System.out.println(sugarFree1);
 
-        System.out.println(s1);
-        System.out.println(s2);
+        int hash = sugarFree1.hashCode();
+        System.out.println("Hash Code: " + hash);
+        System.out.println("Original Code: " + System.identityHashCode(sugarFree1));
 
-        System.out.println("HashCode1: " + s1.hashCode());
-        System.out.println("HashCode2: " + s2.hashCode());
-        System.out.println(new SugarFree("Stevia", 250, true).hashCode());
+        SugarFree sugarFree2 = new SugarFree("Stevia", "Mint", 100);
+        SugarFree sugarFree3 = new SugarFree("Equal", "Vanilla", 50);
+
+        System.out.println("Checking same location: " + (sugarFree1 == sugarFree2));
+        boolean same = sugarFree1.equals(sugarFree2);
+        System.out.println("SugarFree1 is same as SugarFree2: " + same);
+
+        boolean sameSugarFree3 = sugarFree1.equals(sugarFree3);
+        System.out.println("SugarFree1 is same as SugarFree3: " + sameSugarFree3);
     }
 }

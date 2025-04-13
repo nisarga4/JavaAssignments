@@ -4,14 +4,21 @@ import com.xworkz.toString.internal.Shoe;
 
 public class ShoeRunner {
     public static void main(String[] args) {
-        Shoe s1 = new Shoe("Nike", 9, "Black");
-        Shoe s2 = new Shoe("Adidas", 10, "White");
+        Shoe shoe1 = new Shoe("Nike", "10", "Black");
+        System.out.println(shoe1);
 
-        System.out.println(s1);
-        System.out.println(s2);
+        int hash = shoe1.hashCode();
+        System.out.println("Hash Code: " + hash);
+        System.out.println("Original Code: " + System.identityHashCode(shoe1));
 
-        System.out.println("HashCode1: " + s1.hashCode());
-        System.out.println("HashCode2: " + s2.hashCode());
-        System.out.println(new Shoe("Puma", 8, "Blue").hashCode());
+        Shoe shoe2 = new Shoe("Nike", "10", "Black");
+        Shoe shoe3 = new Shoe("Adidas", "9", "White");
+
+        System.out.println("Checking same location: " + (shoe1 == shoe2));
+        boolean same = shoe1.equals(shoe2);
+        System.out.println("Shoe1 is same as Shoe2: " + same);
+
+        boolean sameShoe3 = shoe1.equals(shoe3);
+        System.out.println("Shoe1 is same as Shoe3: " + sameShoe3);
     }
 }

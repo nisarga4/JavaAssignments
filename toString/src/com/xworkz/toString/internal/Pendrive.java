@@ -2,13 +2,13 @@ package com.xworkz.toString.internal;
 
 public class Pendrive {
     private String brand;
-    private int capacity;
-    private boolean usb3;
+    private int capacity;  // in GB
+    private String color;
 
-    public Pendrive(String brand, int capacity, boolean usb3) {
+    public Pendrive(String brand, int capacity, String color) {
         this.brand = brand;
         this.capacity = capacity;
-        this.usb3 = usb3;
+        this.color = color;
     }
 
     @Override
@@ -16,13 +16,25 @@ public class Pendrive {
         return "Pendrive{" +
                 "Brand='" + brand + '\'' +
                 ", Capacity=" + capacity + "GB" +
-                ", USB3.0=" + (usb3 ? "Yes" : "No") +
+                ", Color='" + color + '\'' +
                 '}';
     }
 
     @Override
     public int hashCode() {
-        System.out.println("Default hashcode: " + super.hashCode());
-        return 52052;
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null) {
+            if (obj instanceof Pendrive) {
+                Pendrive otherPendrive = (Pendrive) obj;
+                return this.brand.equals(otherPendrive.brand) &&
+                        this.capacity == otherPendrive.capacity &&
+                        this.color.equals(otherPendrive.color);
+            }
+        }
+        return false;
     }
 }

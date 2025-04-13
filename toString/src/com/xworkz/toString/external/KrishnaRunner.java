@@ -4,14 +4,20 @@ import com.xworkz.toString.internal.Krishna;
 
 public class KrishnaRunner {
     public static void main(String[] args) {
-        Krishna k1 = new Krishna("Vishnu", "Sudharshana Chakra", "Mathura");
-        Krishna k2 = new Krishna("Cowherd", "Flute", "Vrindavan");
+        Krishna krishna1 = new Krishna("Vishnu", "Sudarshan Chakra", "Blue");
+        System.out.println(krishna1);
 
-        System.out.println(k1);
-        System.out.println(k2);
+        int hash = krishna1.hashCode();
+        System.out.println("Hash Code: " + hash);
+        System.out.println("Original Code: " + System.identityHashCode(krishna1));
 
-        System.out.println("HashCode1: " + k1.hashCode());
-        System.out.println("HashCode2: " + k2.hashCode());
-        System.out.println(new Krishna("Divine", "Peacock Feather", "Kurukshetra").hashCode());
+        Krishna krishna2 = new Krishna("Vishnu", "Sudarshan Chakra", "Blue");
+        Krishna krishna3 = new Krishna("Vishnu", "Bow", "Dark");
+
+        System.out.println("Checking same location: " + (krishna1 == krishna2));
+        boolean same = krishna1.equals(krishna2);
+        System.out.println("Krishna1 is same as Krishna2: " + same);
+
+        System.out.println("Krishna1 is same as Krishna3: " + krishna1.equals(krishna3));
     }
 }

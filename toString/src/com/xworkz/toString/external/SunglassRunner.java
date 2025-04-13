@@ -4,14 +4,21 @@ import com.xworkz.toString.internal.Sunglass;
 
 public class SunglassRunner {
     public static void main(String[] args) {
-        Sunglass s1 = new Sunglass("RayBan", true, 4999.0);
-        Sunglass s2 = new Sunglass("Fastrack", false, 1299.0);
+        Sunglass sunglass1 = new Sunglass("Ray-Ban", "Black", "Polarized");
+        System.out.println(sunglass1);
 
-        System.out.println(s1);
-        System.out.println(s2);
+        int hash = sunglass1.hashCode();
+        System.out.println("Hash Code: " + hash);
+        System.out.println("Original Code: " + System.identityHashCode(sunglass1));
 
-        System.out.println("HashCode1: " + s1.hashCode());
-        System.out.println("HashCode2: " + s2.hashCode());
-        System.out.println(new Sunglass("Oakley", true, 5999.0).hashCode());
+        Sunglass sunglass2 = new Sunglass("Ray-Ban", "Black", "Polarized");
+        Sunglass sunglass3 = new Sunglass("Oakley", "Blue", "Non-Polarized");
+
+        System.out.println("Checking same location: " + (sunglass1 == sunglass2));
+        boolean same = sunglass1.equals(sunglass2);
+        System.out.println("Sunglass1 is same as Sunglass2: " + same);
+
+        boolean sameSunglass3 = sunglass1.equals(sunglass3);
+        System.out.println("Sunglass1 is same as Sunglass3: " + sameSunglass3);
     }
 }

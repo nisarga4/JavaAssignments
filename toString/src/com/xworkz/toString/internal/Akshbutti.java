@@ -23,6 +23,14 @@ public class Akshbutti {
                 '}';
     }
 
+    public String getMaterial() {
+        return material;
+    }
+
+    public void setMaterial(String material) {
+        this.material = material;
+    }
+
     @Override
     public int hashCode() {
         System.out.println("Default hashcode: " + super.hashCode());

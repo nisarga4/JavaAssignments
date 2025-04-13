@@ -4,14 +4,20 @@ import com.xworkz.toString.internal.Cycle;
 
 public class CycleRunner {
     public static void main(String[] args) {
-        Cycle c1 = new Cycle("Hero", "Mountain", 21);
-        Cycle c2 = new Cycle("Atlas", "Road", 6);
+        Cycle cycle1 = new Cycle("Trek", "Mountain", 18);
+        System.out.println(cycle1);
 
-        System.out.println(c1);
-        System.out.println(c2);
+        int hash = cycle1.hashCode();
+        System.out.println("Hash Code: " + hash);
+        System.out.println("Original Code: " + System.identityHashCode(cycle1));
 
-        System.out.println("HashCode1: " + c1.hashCode());
-        System.out.println("HashCode2: " + c2.hashCode());
-        System.out.println(new Cycle("Btwin", "Hybrid", 7).hashCode());
+        Cycle cycle2 = new Cycle("Trek", "Mountain", 18);
+        Cycle cycle3 = new Cycle("Giant", "Road", 21);
+
+        System.out.println("Checking same location: " + (cycle1 == cycle2));
+        boolean same = cycle1.equals(cycle2);
+        System.out.println("Cycle1 is same as Cycle2: " + same);
+
+        System.out.println("Cycle1 is same as Cycle3: " + cycle1.equals(cycle3));
     }
 }

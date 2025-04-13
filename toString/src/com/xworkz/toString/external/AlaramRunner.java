@@ -1,17 +1,20 @@
 package com.xworkz.toString.external;
-
 import com.xworkz.toString.internal.Alaram;
 
 public class AlaramRunner {
     public static void main(String[] args) {
-        Alaram a1 = new Alaram("Digital", "Beep", true);
-        Alaram a2 = new Alaram("Analog", "Ring", false);
+        Alaram alaram = new Alaram("Sony", 80, "Buzzer");
+        System.out.println(alaram);
 
-        System.out.println(a1);
-        System.out.println(a2);
+        int hash = alaram.hashCode();
+        System.out.println("Hash Code: " + hash);
+        System.out.println("Original Code: " + System.identityHashCode(alaram));
 
-        System.out.println("HashCode1: " + a1.hashCode());
-        System.out.println("HashCode2: " + a2.hashCode());
-        System.out.println(new Alaram("Smart", "Melody", true).hashCode());
+        Alaram alaram1 = new Alaram("Sony", 80, "Buzzer");
+        Alaram alaram2 = new Alaram("Sony", 90, "Buzzer");
+
+        System.out.println("Checking same location: " + (alaram1 == alaram2));
+        boolean same = alaram1.equals(alaram2);
+        System.out.println("Alarm1 is same as Alarm2: " + same);
     }
 }

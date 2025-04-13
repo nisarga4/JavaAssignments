@@ -4,14 +4,20 @@ import com.xworkz.toString.internal.Rasgulla;
 
 public class RasgullaRunner {
     public static void main(String[] args) {
-        Rasgulla r1 = new Rasgulla("High", true, 5);
-        Rasgulla r2 = new Rasgulla("Medium", false, 10);
+        Rasgulla rasgulla1 = new Rasgulla("Bengali Rasgulla", 150, "Medium");
+        System.out.println(rasgulla1);
 
-        System.out.println(r1);
-        System.out.println(r2);
+        int hash = rasgulla1.hashCode();
+        System.out.println("Hash Code: " + hash);
 
-        System.out.println("HashCode1: " + r1.hashCode());
-        System.out.println("HashCode2: " + r2.hashCode());
-        System.out.println(new Rasgulla("Low", true, 7).hashCode());
+        Rasgulla rasgulla2 = new Rasgulla("Bengali Rasgulla", 150, "Medium");
+        Rasgulla rasgulla3 = new Rasgulla("Anguri Rasgulla", 200, "Sweet");
+
+        System.out.println("Checking same location: " + (rasgulla1 == rasgulla2));
+        boolean same = rasgulla1.equals(rasgulla2);
+        System.out.println("Rasgulla1 is same as Rasgulla2: " + same);
+
+        boolean different = rasgulla1.equals(rasgulla3);
+        System.out.println("Rasgulla1 is same as Rasgulla3: " + different);
     }
 }

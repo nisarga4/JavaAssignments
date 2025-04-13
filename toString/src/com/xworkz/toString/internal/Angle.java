@@ -1,28 +1,48 @@
 package com.xworkz.toString.internal;
 
 public class Angle {
-    private String type;
     private double degree;
-    private boolean isAcute;
+    private String type;
+    private String color;
 
-    public Angle(String type, double degree, boolean isAcute) {
-        this.type = type;
+    public Angle(double degree, String type, String color) {
         this.degree = degree;
-        this.isAcute = isAcute;
+        this.type = type;
+        this.color = color;
     }
 
     @Override
     public String toString() {
         return "Angle{" +
-                "Type='" + type + '\'' +
-                ", Degree=" + degree +
-                ", Acute=" + (isAcute ? "Yes" : "No") +
+                "degree=" + degree +
+                ", type='" + type + '\'' +
+                ", color='" + color + '\'' +
                 '}';
     }
 
     @Override
     public int hashCode() {
-        System.out.println("Default hashcode: " + super.hashCode());
-        return 49049;
+        System.out.println("Default hashCode: " + super.hashCode());
+        return 21; // Custom hash code
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null) {
+            System.out.println("Ref is not null");
+
+            if (obj instanceof Angle) {
+                System.out.println("Ref is instance of Angle");
+                Angle angle1 = this;
+                Angle angle2 = (Angle) obj;
+
+                // Compare the properties of the Angle objects
+                if (angle1.degree == angle2.degree && angle1.type.equals(angle2.type) && angle1.color.equals(angle2.color)) {
+                    System.out.println("Both angles are the same");
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }

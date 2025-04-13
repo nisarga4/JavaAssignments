@@ -4,14 +4,20 @@ import com.xworkz.toString.internal.Football;
 
 public class FootballRunner {
     public static void main(String[] args) {
-        Football f1 = new Football("Adidas", 5.0, true);
-        Football f2 = new Football("Nivia", 4.5, false);
+        Football football1 = new Football("Nike", "Leather", 5.0);
+        System.out.println(football1);
 
-        System.out.println(f1);
-        System.out.println(f2);
+        int hash = football1.hashCode();
+        System.out.println("Hash Code: " + hash);
+        System.out.println("Original Code: " + System.identityHashCode(football1));
 
-        System.out.println("HashCode1: " + f1.hashCode());
-        System.out.println("HashCode2: " + f2.hashCode());
-        System.out.println(new Football("Puma", 4.8, true).hashCode());
+        Football football2 = new Football("Nike", "Leather", 5.0);
+        Football football3 = new Football("Adidas", "Synthetic", 4.5);
+
+        System.out.println("Checking same location: " + (football1 == football2));
+        boolean same = football1.equals(football2);
+        System.out.println("Football1 is same as Football2: " + same);
+
+        System.out.println("Football1 is same as Football3: " + football1.equals(football3));
     }
 }

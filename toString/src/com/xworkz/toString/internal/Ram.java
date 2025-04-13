@@ -1,28 +1,40 @@
 package com.xworkz.toString.internal;
 
 public class Ram {
-    private String type;
+    private String model;
     private int capacity;
-    private int speed;
+    private String type;
 
-    public Ram(String type, int capacity, int speed) {
-        this.type = type;
+    public Ram(String model, int capacity, String type) {
+        this.model = model;
         this.capacity = capacity;
-        this.speed = speed;
+        this.type = type;
     }
 
     @Override
     public String toString() {
         return "Ram{" +
-                "Type='" + type + '\'' +
+                "Model='" + model + '\'' +
                 ", Capacity=" + capacity + "GB" +
-                ", Speed=" + speed + "MHz" +
+                ", Type='" + type + '\'' +
                 '}';
     }
 
     @Override
     public int hashCode() {
-        System.out.println("Default hashcode: " + super.hashCode());
-        return 80005;
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null) {
+            if (obj instanceof Ram) {
+                Ram otherRam = (Ram) obj;
+                return this.model.equals(otherRam.model) &&
+                        this.capacity == otherRam.capacity &&
+                        this.type.equals(otherRam.type);
+            }
+        }
+        return false;
     }
 }

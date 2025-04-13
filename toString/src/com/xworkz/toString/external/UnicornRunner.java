@@ -4,14 +4,20 @@ import com.xworkz.toString.internal.Unicorn;
 
 public class UnicornRunner {
     public static void main(String[] args) {
-        Unicorn u1 = new Unicorn("Sparkle", "Rainbow", true);
-        Unicorn u2 = new Unicorn("Twilight", "White", true);
+        Unicorn unicorn1 = new Unicorn("Twilight", "Purple", 5);
+        System.out.println(unicorn1);
 
-        System.out.println(u1);
-        System.out.println(u2);
+        int hash = unicorn1.hashCode();
+        System.out.println("Hash Code: " + hash);
+        System.out.println("Original Code: " + System.identityHashCode(unicorn1));
 
-        System.out.println("HashCode1: " + u1.hashCode());
-        System.out.println("HashCode2: " + u2.hashCode());
-        System.out.println(new Unicorn("Starlight", "Blue", false).hashCode());
+        Unicorn unicorn2 = new Unicorn("Twilight", "Purple", 5);
+        Unicorn unicorn3 = new Unicorn("Starlight", "Blue", 4);
+
+        System.out.println("Checking same location: " + (unicorn1 == unicorn2));
+        boolean same = unicorn1.equals(unicorn2);
+        System.out.println("Unicorn1 is same as Unicorn2: " + same);
+
+        System.out.println("Unicorn1 is same as Unicorn3: " + unicorn1.equals(unicorn3));
     }
 }

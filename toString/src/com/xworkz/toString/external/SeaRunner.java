@@ -4,14 +4,21 @@ import com.xworkz.toString.internal.Sea;
 
 public class SeaRunner {
     public static void main(String[] args) {
-        Sea sea1 = new Sea("Arabian Sea", 1500.0, true);
-        Sea sea2 = new Sea("Baltic Sea", 450.0, true);
-
+        Sea sea1 = new Sea("Pacific Ocean", "Global", 10924.0);
         System.out.println(sea1);
-        System.out.println(sea2);
 
-        System.out.println("HashCode1: " + sea1.hashCode());
-        System.out.println("HashCode2: " + sea2.hashCode());
-        System.out.println(new Sea("Dead Sea", 304.8, verySalty).hashCode());
+        int hash = sea1.hashCode();
+        System.out.println("Hash Code: " + hash);
+        System.out.println("Original Code: " + System.identityHashCode(sea1));
+
+        Sea sea2 = new Sea("Pacific Ocean", "Global", 10924.0);
+        Sea sea3 = new Sea("Atlantic Ocean", "Global", 8130.0);
+
+        System.out.println("Checking same location: " + (sea1 == sea2));
+        boolean same = sea1.equals(sea2);
+        System.out.println("Sea1 is same as Sea2: " + same);
+
+        boolean sameSea3 = sea1.equals(sea3);
+        System.out.println("Sea1 is same as Sea3: " + sameSea3);
     }
 }

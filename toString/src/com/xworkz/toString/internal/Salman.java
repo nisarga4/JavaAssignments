@@ -1,28 +1,40 @@
 package com.xworkz.toString.internal;
 
 public class Salman {
-    private String profession;
+    private String name;
     private int age;
-    private boolean isFamous;
+    private String profession;
 
-    public Salman(String profession, int age, boolean isFamous) {
-        this.profession = profession;
+    public Salman(String name, int age, String profession) {
+        this.name = name;
         this.age = age;
-        this.isFamous = isFamous;
+        this.profession = profession;
     }
 
     @Override
     public String toString() {
         return "Salman{" +
-                "Profession='" + profession + '\'' +
+                "Name='" + name + '\'' +
                 ", Age=" + age +
-                ", Famous=" + (isFamous ? "Yes" : "No") +
+                ", Profession='" + profession + '\'' +
                 '}';
     }
 
     @Override
     public int hashCode() {
-        System.out.println("Default hashcode: " + super.hashCode());
-        return 60060;
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null) {
+            if (obj instanceof Salman) {
+                Salman otherSalman = (Salman) obj;
+                return this.name.equals(otherSalman.name) &&
+                        this.age == otherSalman.age &&
+                        this.profession.equals(otherSalman.profession);
+            }
+        }
+        return false;
     }
 }

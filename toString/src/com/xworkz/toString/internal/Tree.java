@@ -1,28 +1,38 @@
 package com.xworkz.toString.internal;
 
 public class Tree {
-    private String name;
-    private int height;
-    private boolean hasFruits;
+    private String species;
+    private double height;
+    private int age;
 
-    public Tree(String name, int height, boolean hasFruits) {
-        this.name = name;
+    public Tree(String species, double height, int age) {
+        this.species = species;
         this.height = height;
-        this.hasFruits = hasFruits;
+        this.age = age;
     }
 
     @Override
     public String toString() {
-        return "Tree{" +
-                "Name='" + name + '\'' +
-                ", Height=" + height + "ft" +
-                ", HasFruits=" + (hasFruits ? "Yes" : "No") +
-                '}';
+        return "Tree{Species='" + species + "', Height=" + height + " meters, Age=" + age + " years}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("Default hashcode: " + super.hashCode());
-        return 80008;
+        System.out.println("Default hash code: " + super.hashCode());
+        return 150;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null) {
+            if (obj instanceof Tree) {
+                Tree tree1 = this;
+                Tree tree2 = (Tree) obj;
+                if (tree1.species.equals(tree2.species) && tree1.height == tree2.height && tree1.age == tree2.age) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }

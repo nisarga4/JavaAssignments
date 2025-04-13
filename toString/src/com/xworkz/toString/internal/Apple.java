@@ -1,28 +1,44 @@
 package com.xworkz.toString.internal;
 
 public class Apple {
-    private String variety;
+    private String color;
     private String origin;
-    private double pricePerKg;
+    private double weight;
 
-    public Apple(String variety, String origin, double pricePerKg) {
-        this.variety = variety;
+    public Apple(String color, String origin, double weight) {
+        this.color = color;
         this.origin = origin;
-        this.pricePerKg = pricePerKg;
+        this.weight = weight;
     }
 
     @Override
     public String toString() {
         return "Apple{" +
-                "Variety='" + variety + '\'' +
-                ", Origin='" + origin + '\'' +
-                ", PricePerKg=" + pricePerKg + " INR" +
+                "color='" + color + '\'' +
+                ", origin='" + origin + '\'' +
+                ", weight=" + weight +
                 '}';
     }
 
     @Override
     public int hashCode() {
-        System.out.println("Default hashcode: " + super.hashCode());
-        return 444;
+        System.out.println("Default hash code: " + super.hashCode());
+        return 88;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null) {
+            if (obj instanceof Apple) {
+                Apple apple1 = this;
+                Apple apple2 = (Apple) obj;
+                if (apple1.color.equals(apple2.color) &&
+                        apple1.origin.equals(apple2.origin) &&
+                        apple1.weight == apple2.weight) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }

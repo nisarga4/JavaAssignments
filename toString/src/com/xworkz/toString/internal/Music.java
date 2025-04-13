@@ -1,12 +1,12 @@
 package com.xworkz.toString.internal;
 
 public class Music {
-    private String genre;
+    private String title;
     private String artist;
-    private int duration; // in minutes
+    private int duration; // Duration in seconds
 
-    public Music(String genre, String artist, int duration) {
-        this.genre = genre;
+    public Music(String title, String artist, int duration) {
+        this.title = title;
         this.artist = artist;
         this.duration = duration;
     }
@@ -14,15 +14,27 @@ public class Music {
     @Override
     public String toString() {
         return "Music{" +
-                "Genre='" + genre + '\'' +
+                "Title='" + title + '\'' +
                 ", Artist='" + artist + '\'' +
-                ", Duration=" + duration + "min" +
+                ", Duration=" + duration + " seconds" +
                 '}';
     }
 
     @Override
     public int hashCode() {
-        System.out.println("Default hashcode: " + super.hashCode());
-        return 70001;
+        return title.hashCode() + artist.hashCode() + duration;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null) {
+            if (obj instanceof Music) {
+                Music otherMusic = (Music) obj;
+                return this.title.equals(otherMusic.title) &&
+                        this.artist.equals(otherMusic.artist) &&
+                        this.duration == otherMusic.duration;
+            }
+        }
+        return false;
     }
 }

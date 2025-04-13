@@ -4,14 +4,20 @@ import com.xworkz.toString.internal.John;
 
 public class JohnRunner {
     public static void main(String[] args) {
-        John j1 = new John(28, "Engineer", "Bangalore");
-        John j2 = new John(35, "Doctor", "Mumbai");
+        John john1 = new John("Engineer", 30, "New York");
+        System.out.println(john1);
 
-        System.out.println(j1);
-        System.out.println(j2);
+        int hash = john1.hashCode();
+        System.out.println("Hash Code: " + hash);
+        System.out.println("Original Code: " + System.identityHashCode(john1));
 
-        System.out.println("HashCode1: " + j1.hashCode());
-        System.out.println("HashCode2: " + j2.hashCode());
-        System.out.println(new John(40, "Teacher", "Delhi").hashCode());
+        John john2 = new John("Engineer", 30, "New York");
+        John john3 = new John("Doctor", 28, "Los Angeles");
+
+        System.out.println("Checking same location: " + (john1 == john2));
+        boolean same = john1.equals(john2);
+        System.out.println("John1 is same as John2: " + same);
+
+        System.out.println("John1 is same as John3: " + john1.equals(john3));
     }
 }

@@ -4,18 +4,20 @@ import com.xworkz.toString.internal.Candy;
 
 public class CandyRunner {
     public static void main(String[] args) {
-        Candy candy1 = new Candy("Strawberry", "Red", 12.5);
-        Candy candy2 = new Candy("Mint", "Green", 8.0);
-
+        Candy candy1 = new Candy("Strawberry", "Red", 50.0);
         System.out.println(candy1);
-        System.out.println(candy2);
 
-        int code1 = candy1.hashCode();
-        System.out.println("Code1: " + code1);
+        int hash = candy1.hashCode();
+        System.out.println("Hash Code: " + hash);
+        System.out.println("Original Code: " + System.identityHashCode(candy1));
 
-        int code2 = candy2.hashCode();
-        System.out.println("Code2: " + code2);
+        Candy candy2 = new Candy("Strawberry", "Red", 50.0);
+        Candy candy3 = new Candy("Lemon", "Yellow", 40.0);
 
-        System.out.println(new Candy("Orange", "Orange", 10.0).hashCode());
+        System.out.println("Checking same location: " + (candy1 == candy2));
+        boolean same = candy1.equals(candy2);
+        System.out.println("Candy1 is same as Candy2: " + same);
+
+        System.out.println("Candy1 is same as Candy3: " + candy1.equals(candy3));
     }
 }

@@ -4,14 +4,21 @@ import com.xworkz.toString.internal.Smartwatch;
 
 public class SmartwatchRunner {
     public static void main(String[] args) {
-        Smartwatch sw1 = new Smartwatch("Apple", true, 29999.99);
-        Smartwatch sw2 = new Smartwatch("Samsung", false, 19999.99);
+        Smartwatch watch1 = new Smartwatch("Apple", 399.99, "GPS, Heart Rate Monitor");
+        System.out.println(watch1);
 
-        System.out.println(sw1);
-        System.out.println(sw2);
+        int hash = watch1.hashCode();
+        System.out.println("Hash Code: " + hash);
+        System.out.println("Original Code: " + System.identityHashCode(watch1));
 
-        System.out.println("HashCode1: " + sw1.hashCode());
-        System.out.println("HashCode2: " + sw2.hashCode());
-        System.out.println(new Smartwatch("Boat", true, 4999.0).hashCode());
+        Smartwatch watch2 = new Smartwatch("Apple", 399.99, "GPS, Heart Rate Monitor");
+        Smartwatch watch3 = new Smartwatch("Samsung", 299.99, "GPS, Sleep Tracking");
+
+        System.out.println("Checking same location: " + (watch1 == watch2));
+        boolean same = watch1.equals(watch2);
+        System.out.println("Watch1 is same as Watch2: " + same);
+
+        boolean sameWatch3 = watch1.equals(watch3);
+        System.out.println("Watch1 is same as Watch3: " + sameWatch3);
     }
 }

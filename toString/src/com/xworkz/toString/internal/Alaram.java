@@ -1,28 +1,41 @@
 package com.xworkz.toString.internal;
 
 public class Alaram {
-    private String type;
-    private String tone;
-    private boolean isVibrating;
+    private String brand;
+    private int volume;
+    private String soundType;
 
-    public Alaram(String type, String tone, boolean isVibrating) {
-        this.type = type;
-        this.tone = tone;
-        this.isVibrating = isVibrating;
+    public Alaram(String brand, int volume, String soundType) {
+        this.brand = brand;
+        this.volume = volume;
+        this.soundType = soundType;
     }
 
     @Override
     public String toString() {
-        return "Alaram{" +
-                "Type='" + type + '\'' +
-                ", Tone='" + tone + '\'' +
-                ", Vibrating=" + (isVibrating ? "Yes" : "No") +
-                '}';
+        return "Alaram{Brand='" + brand + "', Volume=" + volume + "dB, SoundType='" + soundType + "'}";
     }
 
     @Override
-    public int hashCode() {
-        System.out.println("Default hashcode: " + super.hashCode());
-        return 80010;
+    public int hashCode(){
+        System.out.println("Default hash code: " + super.hashCode());
+        return 197;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null) {
+            System.out.println("Ref is not null");
+            if (obj instanceof Alaram) {
+                System.out.println("Ref is Alarm, will compare...");
+                Alaram alaram1 = this;
+                Alaram alaram2 = (Alaram) obj;
+                if (alaram1.brand.equals(alaram2.brand) && alaram1.volume == alaram2.volume && alaram1.soundType.equals(alaram2.soundType)) {
+                    System.out.println("Both Alarms are identical");
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }

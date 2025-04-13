@@ -4,18 +4,18 @@ import com.xworkz.toString.internal.Apple;
 
 public class AppleRunner {
     public static void main(String[] args) {
-        Apple apple1 = new Apple("Fuji", "Japan", 180.0);
-        Apple apple2 = new Apple("Kinnaur", "India", 150.0);
-
+        Apple apple1 = new Apple("Red", "Kashmir", 0.25);
         System.out.println(apple1);
-        System.out.println(apple2);
 
-        int code1 = apple1.hashCode();
-        System.out.println("Code1: " + code1);
+        int hash = apple1.hashCode();
+        System.out.println("Hash Code: " + hash);
+        System.out.println("Original Code: " + System.identityHashCode(apple1));
 
-        int code2 = apple2.hashCode();
-        System.out.println("Code2: " + code2);
+        Apple apple2 = new Apple("Red", "Kashmir", 0.25);
+        Apple apple3 = new Apple("Green", "Himachal", 0.30);
 
-        System.out.println(new Apple("Granny Smith", "USA", 200.0).hashCode());
+        System.out.println("Checking same location: " + (apple2 == apple3));
+        boolean same = apple2.equals(apple3);
+        System.out.println("Apple2 is same as Apple3: " + same);
     }
 }

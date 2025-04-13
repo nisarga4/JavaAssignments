@@ -1,28 +1,38 @@
 package com.xworkz.toString.internal;
 
 public class John {
+    private String occupation;
     private int age;
-    private String profession;
     private String city;
 
-    public John(int age, String profession, String city) {
+    public John(String occupation, int age, String city) {
+        this.occupation = occupation;
         this.age = age;
-        this.profession = profession;
         this.city = city;
     }
 
     @Override
     public String toString() {
-        return "John{" +
-                "Age=" + age +
-                ", Profession='" + profession + '\'' +
-                ", City='" + city + '\'' +
-                '}';
+        return "John{Occupation='" + occupation + "', Age=" + age + ", City='" + city + "'}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("Default hashcode: " + super.hashCode());
-        return 80009;
+        System.out.println("Default hash code: " + super.hashCode());
+        return 321;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null) {
+            if (obj instanceof John) {
+                John john1 = this;
+                John john2 = (John) obj;
+                if (john1.occupation.equals(john2.occupation) && john1.age == john2.age && john1.city.equals(john2.city)) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }

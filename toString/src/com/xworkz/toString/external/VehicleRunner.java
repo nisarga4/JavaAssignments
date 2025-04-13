@@ -4,14 +4,20 @@ import com.xworkz.toString.internal.Vehicle;
 
 public class VehicleRunner {
     public static void main(String[] args) {
-        Vehicle v1 = new Vehicle("Bike", "Yamaha", 150);
-        Vehicle v2 = new Vehicle("Car", "Toyota", 1800);
+        Vehicle vehicle1 = new Vehicle("Toyota", "Camry", 2020);
+        System.out.println(vehicle1);
 
-        System.out.println(v1);
-        System.out.println(v2);
+        int hash = vehicle1.hashCode();
+        System.out.println("Hash Code: " + hash);
+        System.out.println("Original Code: " + System.identityHashCode(vehicle1));
 
-        System.out.println("HashCode1: " + v1.hashCode());
-        System.out.println("HashCode2: " + v2.hashCode());
-        System.out.println(new Vehicle("Truck", "Tata", 5000).hashCode());
+        Vehicle vehicle2 = new Vehicle("Toyota", "Camry", 2020);
+        Vehicle vehicle3 = new Vehicle("Honda", "Civic", 2021);
+
+        System.out.println("Checking same location: " + (vehicle1 == vehicle2));
+        boolean same = vehicle1.equals(vehicle2);
+        System.out.println("Vehicle1 is same as Vehicle2: " + same);
+
+        System.out.println("Vehicle1 is same as Vehicle3: " + vehicle1.equals(vehicle3));
     }
 }

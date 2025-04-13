@@ -4,14 +4,20 @@ import com.xworkz.toString.internal.Salman;
 
 public class SalmanRunner {
     public static void main(String[] args) {
-        Salman s1 = new Salman("Actor", 58, true);
-        Salman s2 = new Salman("Producer", 60, true);
+        Salman salman1 = new Salman("Salman Khan", 55, "Actor");
+        System.out.println(salman1);
 
-        System.out.println(s1);
-        System.out.println(s2);
+        int hash = salman1.hashCode();
+        System.out.println("Hash Code: " + hash);
 
-        System.out.println("HashCode1: " + s1.hashCode());
-        System.out.println("HashCode2: " + s2.hashCode());
-        System.out.println(new Salman("Host", 55, true).hashCode());
+        Salman salman2 = new Salman("Salman Khan", 55, "Actor");
+        Salman salman3 = new Salman("Aamir Khan", 55, "Actor");
+
+        System.out.println("Checking same location: " + (salman1 == salman2));
+        boolean same = salman1.equals(salman2);
+        System.out.println("Salman1 is same as Salman2: " + same);
+
+        boolean different = salman1.equals(salman3);
+        System.out.println("Salman1 is same as Salman3: " + different);
     }
 }

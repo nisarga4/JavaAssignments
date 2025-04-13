@@ -4,14 +4,20 @@ import com.xworkz.toString.internal.Towel;
 
 public class TowelRunner {
     public static void main(String[] args) {
-        Towel t1 = new Towel("Blue", "Cotton", 120);
-        Towel t2 = new Towel("White", "Microfiber", 150);
+        Towel towel1 = new Towel("Blue", 1.5, "Cotton");
+        System.out.println(towel1);
 
-        System.out.println(t1);
-        System.out.println(t2);
+        int hash = towel1.hashCode();
+        System.out.println("Hash Code: " + hash);
+        System.out.println("Original Code: " + System.identityHashCode(towel1));
 
-        System.out.println("HashCode1: " + t1.hashCode());
-        System.out.println("HashCode2: " + t2.hashCode());
-        System.out.println(new Towel("Pink", "Linen", 130).hashCode());
+        Towel towel2 = new Towel("Blue", 1.5, "Cotton");
+        Towel towel3 = new Towel("Red", 1.2, "Microfiber");
+
+        System.out.println("Checking same location: " + (towel1 == towel2));
+        boolean same = towel1.equals(towel2);
+        System.out.println("Towel1 is same as Towel2: " + same);
+
+        System.out.println("Towel1 is same as Towel3: " + towel1.equals(towel3));
     }
 }

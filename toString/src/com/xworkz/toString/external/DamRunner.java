@@ -4,18 +4,20 @@ import com.xworkz.toString.internal.Dam;
 
 public class DamRunner {
     public static void main(String[] args) {
-        Dam dam1 = new Dam("Bhakra Nangal", "Himachal Pradesh", 9.34);
-        Dam dam2 = new Dam("Sardar Sarovar", "Gujarat", 7.70);
-
+        Dam dam1 = new Dam("Hoover", 5000.5, 1936);
         System.out.println(dam1);
-        System.out.println(dam2);
 
-        int code1 = dam1.hashCode();
-        System.out.println("Code1: " + code1);
+        int hash = dam1.hashCode();
+        System.out.println("Hash Code: " + hash);
+        System.out.println("Original Code: " + System.identityHashCode(dam1));
 
-        int code2 = dam2.hashCode();
-        System.out.println("Code2: " + code2);
+        Dam dam2 = new Dam("Hoover", 5000.5, 1936);
+        Dam dam3 = new Dam("Three Gorges", 20000.0, 2003);
 
-        System.out.println(new Dam("Tehri", "Uttarakhand", 8.55).hashCode());
+        System.out.println("Checking same location: " + (dam1 == dam2));
+        boolean same = dam1.equals(dam2);
+        System.out.println("Dam1 is same as Dam2: " + same);
+
+        System.out.println("Dam1 is same as Dam3: " + dam1.equals(dam3));
     }
 }

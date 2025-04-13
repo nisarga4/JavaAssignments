@@ -22,7 +22,19 @@ public class Novel {
 
     @Override
     public int hashCode() {
-        System.out.println("Default hashcode: " + super.hashCode());
-        return 27027;
+        return title.hashCode() + author.hashCode() + Integer.hashCode(pages);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null) {
+            if (obj instanceof Novel) {
+                Novel otherNovel = (Novel) obj;
+                return this.title.equals(otherNovel.title) &&
+                        this.author.equals(otherNovel.author) &&
+                        this.pages == otherNovel.pages;
+            }
+        }
+        return false;
     }
 }

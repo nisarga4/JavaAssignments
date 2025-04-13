@@ -1,28 +1,40 @@
 package com.xworkz.toString.internal;
 
 public class Rasgulla {
+    private String name;
+    private double weight;
     private String sweetnessLevel;
-    private boolean chilled;
-    private int quantity;
 
-    public Rasgulla(String sweetnessLevel, boolean chilled, int quantity) {
+    public Rasgulla(String name, double weight, String sweetnessLevel) {
+        this.name = name;
+        this.weight = weight;
         this.sweetnessLevel = sweetnessLevel;
-        this.chilled = chilled;
-        this.quantity = quantity;
     }
 
     @Override
     public String toString() {
         return "Rasgulla{" +
-                "SweetnessLevel='" + sweetnessLevel + '\'' +
-                ", Chilled=" + (chilled ? "Yes" : "No") +
-                ", Quantity=" + quantity +
+                "Name='" + name + '\'' +
+                ", Weight=" + weight + "g" +
+                ", Sweetness Level='" + sweetnessLevel + '\'' +
                 '}';
     }
 
     @Override
     public int hashCode() {
-        System.out.println("Default hashcode: " + super.hashCode());
-        return 32032;
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null) {
+            if (obj instanceof Rasgulla) {
+                Rasgulla otherRasgulla = (Rasgulla) obj;
+                return this.name.equals(otherRasgulla.name) &&
+                        this.weight == otherRasgulla.weight &&
+                        this.sweetnessLevel.equals(otherRasgulla.sweetnessLevel);
+            }
+        }
+        return false;
     }
 }

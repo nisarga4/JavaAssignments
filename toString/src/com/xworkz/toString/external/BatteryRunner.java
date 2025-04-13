@@ -4,14 +4,18 @@ import com.xworkz.toString.internal.Battery;
 
 public class BatteryRunner {
     public static void main(String[] args) {
-        Battery b1 = new Battery("Duracell", 2500, true);
-        Battery b2 = new Battery("Eveready", 1800, false);
+        Battery battery1 = new Battery("Duracell", 3000, "AA");
+        System.out.println(battery1);
 
-        System.out.println(b1);
-        System.out.println(b2);
+        int hash = battery1.hashCode();
+        System.out.println("Hash Code: " + hash);
+        System.out.println("Original Code: " + System.identityHashCode(battery1));
 
-        System.out.println("HashCode1: " + b1.hashCode());
-        System.out.println("HashCode2: " + b2.hashCode());
-        System.out.println(new Battery("Panasonic", 2000, true).hashCode());
+        Battery battery2 = new Battery("Duracell", 3000, "AA");
+        Battery battery3 = new Battery("Energizer", 2500, "AAA");
+
+        System.out.println("Checking same location: " + (battery2 == battery3));
+        boolean same = battery2.equals(battery3);
+        System.out.println("Battery2 is same as Battery3: " + same);
     }
 }

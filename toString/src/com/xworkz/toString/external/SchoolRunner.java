@@ -4,14 +4,20 @@ import com.xworkz.toString.internal.School;
 
 public class SchoolRunner {
     public static void main(String[] args) {
-        School s1 = new School("Greenwood High", "Bangalore", 1200);
-        School s2 = new School("Delhi Public School", "Delhi", 1500);
+        School school1 = new School("Greenwood High", 1200, "New York");
+        System.out.println(school1);
 
-        System.out.println(s1);
-        System.out.println(s2);
+        int hash = school1.hashCode();
+        System.out.println("Hash Code: " + hash);
 
-        System.out.println("HashCode1: " + s1.hashCode());
-        System.out.println("HashCode2: " + s2.hashCode());
-        System.out.println(new School("Ryan International", "Mumbai", 1000).hashCode());
+        School school2 = new School("Greenwood High", 1200, "New York");
+        School school3 = new School("Riverdale High", 1000, "Los Angeles");
+
+        System.out.println("Checking same location: " + (school1 == school2));
+        boolean same = school1.equals(school2);
+        System.out.println("School1 is same as School2: " + same);
+
+        boolean different = school1.equals(school3);
+        System.out.println("School1 is same as School3: " + different);
     }
 }

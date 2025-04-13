@@ -1,17 +1,23 @@
 package com.xworkz.toString.external;
 
-import com.xworkz.toString.internal.Tree;
+import com.xworkz.toString.internal.Unicorn;
 
-public class TreeRunner {
+public class UnicornRunner {
     public static void main(String[] args) {
-        Tree t1 = new Tree("Mango", 30, true);
-        Tree t2 = new Tree("Neem", 25, false);
+        Unicorn unicorn1 = new Unicorn("Twilight", "Purple", 5);
+        System.out.println(unicorn1);
 
-        System.out.println(t1);
-        System.out.println(t2);
+        int hash = unicorn1.hashCode();
+        System.out.println("Hash Code: " + hash);
+        System.out.println("Original Code: " + System.identityHashCode(unicorn1));
 
-        System.out.println("HashCode1: " + t1.hashCode());
-        System.out.println("HashCode2: " + t2.hashCode());
-        System.out.println(new Tree("Banyan", 50, false).hashCode());
+        Unicorn unicorn2 = new Unicorn("Twilight", "Purple", 5);
+        Unicorn unicorn3 = new Unicorn("Starlight", "Blue", 4);
+
+        System.out.println("Checking same location: " + (unicorn1 == unicorn2));
+        boolean same = unicorn1.equals(unicorn2);
+        System.out.println("Unicorn1 is same as Unicorn2: " + same);
+
+        System.out.println("Unicorn1 is same as Unicorn3: " + unicorn1.equals(unicorn3));
     }
 }

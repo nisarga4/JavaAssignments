@@ -1,28 +1,40 @@
 package com.xworkz.toString.internal;
 
 public class Rabbit {
+    private String breed;
+    private double weight;
     private String color;
-    private int age;
-    private boolean isDomestic;
 
-    public Rabbit(String color, int age, boolean isDomestic) {
+    public Rabbit(String breed, double weight, String color) {
+        this.breed = breed;
+        this.weight = weight;
         this.color = color;
-        this.age = age;
-        this.isDomestic = isDomestic;
     }
 
     @Override
     public String toString() {
         return "Rabbit{" +
-                "Color='" + color + '\'' +
-                ", Age=" + age +
-                ", Domestic=" + (isDomestic ? "Yes" : "No") +
+                "Breed='" + breed + '\'' +
+                ", Weight=" + weight + "kg" +
+                ", Color='" + color + '\'' +
                 '}';
     }
 
     @Override
     public int hashCode() {
-        System.out.println("Default hashcode: " + super.hashCode());
-        return 31031;
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null) {
+            if (obj instanceof Rabbit) {
+                Rabbit otherRabbit = (Rabbit) obj;
+                return this.breed.equals(otherRabbit.breed) &&
+                        this.weight == otherRabbit.weight &&
+                        this.color.equals(otherRabbit.color);
+            }
+        }
+        return false;
     }
 }

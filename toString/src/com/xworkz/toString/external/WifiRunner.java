@@ -4,14 +4,20 @@ import com.xworkz.toString.internal.Wifi;
 
 public class WifiRunner {
     public static void main(String[] args) {
-        Wifi wifi1 = new Wifi("TP-Link", 100.0, true);
-        Wifi wifi2 = new Wifi("Netgear", 150.0, false);
-
+        Wifi wifi1 = new Wifi("TP-Link", "Router", 300);
         System.out.println(wifi1);
-        System.out.println(wifi2);
 
-        System.out.println("HashCode1: " + wifi1.hashCode());
-        System.out.println("HashCode2: " + wifi2.hashCode());
-        System.out.println(new Wifi("D-Link", 200.0, true).hashCode());
+        int hash = wifi1.hashCode();
+        System.out.println("Hash Code: " + hash);
+        System.out.println("Original Code: " + System.identityHashCode(wifi1));
+
+        Wifi wifi2 = new Wifi("TP-Link", "Router", 300);
+        Wifi wifi3 = new Wifi("D-Link", "Modem", 100);
+
+        System.out.println("Checking same location: " + (wifi1 == wifi2));
+        boolean same = wifi1.equals(wifi2);
+        System.out.println("WiFi1 is same as WiFi2: " + same);
+
+        System.out.println("WiFi1 is same as WiFi3: " + wifi1.equals(wifi3));
     }
 }

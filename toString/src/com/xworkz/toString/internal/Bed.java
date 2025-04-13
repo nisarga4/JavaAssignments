@@ -1,28 +1,43 @@
 package com.xworkz.toString.internal;
 
 public class Bed {
-    private String type;
+    private String size;
     private String material;
-    private double size; // in feet
+    private boolean storageAvailable;
 
-    public Bed(String type, String material, double size) {
-        this.type = type;
-        this.material = material;
+    public Bed(String size, String material, boolean storageAvailable) {
         this.size = size;
+        this.material = material;
+        this.storageAvailable = storageAvailable;
     }
 
     @Override
     public String toString() {
-        return "Bed{" +
-                "Type='" + type + '\'' +
-                ", Material='" + material + '\'' +
-                ", Size=" + size + "ft" +
-                '}';
+        return "Bed{Size='" + size + "', Material='" + material + "', StorageAvailable=" + storageAvailable + "}";
     }
 
     @Override
     public int hashCode() {
-        System.out.println("Default hashcode: " + super.hashCode());
-        return 777;
+        System.out.println("Default hash code: " + super.hashCode());
+        return 555;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null) {
+            System.out.println("Ref is not null");
+            if (obj instanceof Bed) {
+                System.out.println("Ref is Bed, will compare...");
+                Bed bed1 = this;
+                Bed bed2 = (Bed) obj;
+                if (bed1.size.equals(bed2.size) &&
+                        bed1.material.equals(bed2.material) &&
+                        bed1.storageAvailable == bed2.storageAvailable) {
+                    System.out.println("Both beds are identical");
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }

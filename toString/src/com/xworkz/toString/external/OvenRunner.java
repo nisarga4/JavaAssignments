@@ -4,14 +4,20 @@ import com.xworkz.toString.internal.Oven;
 
 public class OvenRunner {
     public static void main(String[] args) {
-        Oven o1 = new Oven("Microwave", "LG", 30);
-        Oven o2 = new Oven("Convection", "Samsung", 25);
+        Oven oven1 = new Oven("Samsung", 30.0, "Convection");
+        System.out.println(oven1);
 
-        System.out.println(o1);
-        System.out.println(o2);
+        int hash = oven1.hashCode();
+        System.out.println("Hash Code: " + hash);
 
-        System.out.println("HashCode1: " + o1.hashCode());
-        System.out.println("HashCode2: " + o2.hashCode());
-        System.out.println(new Oven("Grill", "IFB", 20).hashCode());
+        Oven oven2 = new Oven("Samsung", 30.0, "Convection");
+        Oven oven3 = new Oven("LG", 32.0, "Microwave");
+
+        System.out.println("Checking same location: " + (oven1 == oven2));
+        boolean same = oven1.equals(oven2);
+        System.out.println("Oven1 is same as Oven2: " + same);
+
+        boolean different = oven1.equals(oven3);
+        System.out.println("Oven1 is same as Oven3: " + different);
     }
 }

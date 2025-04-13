@@ -4,14 +4,20 @@ import com.xworkz.toString.internal.Nature;
 
 public class NatureRunner {
     public static void main(String[] args) {
-        Nature n1 = new Nature("Forest", true, "Western Ghats");
-        Nature n2 = new Nature("River", false, "Ganga");
+        Nature nature1 = new Nature("Earth", "Forest", "Spring");
+        System.out.println(nature1);
 
-        System.out.println(n1);
-        System.out.println(n2);
+        int hash = nature1.hashCode();
+        System.out.println("Hash Code: " + hash);
 
-        System.out.println("HashCode1: " + n1.hashCode());
-        System.out.println("HashCode2: " + n2.hashCode());
-        System.out.println(new Nature("Mountain", true, "Himalayas").hashCode());
+        Nature nature2 = new Nature("Earth", "Forest", "Spring");
+        Nature nature3 = new Nature("Water", "Ocean", "Summer");
+
+        System.out.println("Checking same location: " + (nature1 == nature2));
+        boolean same = nature1.equals(nature2);
+        System.out.println("Nature1 is same as Nature2: " + same);
+
+        boolean different = nature1.equals(nature3);
+        System.out.println("Nature1 is same as Nature3: " + different);
     }
 }

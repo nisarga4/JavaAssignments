@@ -4,14 +4,20 @@ import com.xworkz.toString.internal.Novel;
 
 public class NovelRunner {
     public static void main(String[] args) {
-        Novel n1 = new Novel("The Alchemist", "Paulo Coelho", 208);
-        Novel n2 = new Novel("1984", "George Orwell", 328);
+        Novel novel1 = new Novel("1984", "George Orwell", 328);
+        System.out.println(novel1);
 
-        System.out.println(n1);
-        System.out.println(n2);
+        int hash = novel1.hashCode();
+        System.out.println("Hash Code: " + hash);
 
-        System.out.println("HashCode1: " + n1.hashCode());
-        System.out.println("HashCode2: " + n2.hashCode());
-        System.out.println(new Novel("To Kill a Mockingbird", "Harper Lee", 281).hashCode());
+        Novel novel2 = new Novel("1984", "George Orwell", 328);
+        Novel novel3 = new Novel("Brave New World", "Aldous Huxley", 311);
+
+        System.out.println("Checking same location: " + (novel1 == novel2));
+        boolean same = novel1.equals(novel2);
+        System.out.println("Novel1 is same as Novel2: " + same);
+
+        boolean different = novel1.equals(novel3);
+        System.out.println("Novel1 is same as Novel3: " + different);
     }
 }

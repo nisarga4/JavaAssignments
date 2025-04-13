@@ -4,14 +4,20 @@ import com.xworkz.toString.internal.Lion;
 
 public class LionRunner {
     public static void main(String[] args) {
-        Lion l1 = new Lion("Asiatic", 8, "India");
-        Lion l2 = new Lion("African", 10, "Kenya");
+        Lion lion1 = new Lion("Simba", 5, "Savannah");
+        System.out.println(lion1);
 
-        System.out.println(l1);
-        System.out.println(l2);
+        int hash = lion1.hashCode();
+        System.out.println("Hash Code: " + hash);
+        System.out.println("Original Code: " + System.identityHashCode(lion1));
 
-        System.out.println("HashCode1: " + l1.hashCode());
-        System.out.println("HashCode2: " + l2.hashCode());
-        System.out.println(new Lion("White", 6, "South Africa").hashCode());
+        Lion lion2 = new Lion("Simba", 5, "Savannah");
+        Lion lion3 = new Lion("Leo", 7, "Jungle");
+
+        System.out.println("Checking same location: " + (lion1 == lion2));
+        boolean same = lion1.equals(lion2);
+        System.out.println("Lion1 is same as Lion2: " + same);
+
+        System.out.println("Lion1 is same as Lion3: " + lion1.equals(lion3));
     }
 }

@@ -4,14 +4,18 @@ import com.xworkz.toString.internal.Box;
 
 public class BoxRunner {
     public static void main(String[] args) {
-        Box b1 = new Box("Plastic", 5.5, true);
-        Box b2 = new Box("Cardboard", 3.0, false);
+        Box box1 = new Box("Red", 10.5, 20.0);
+        System.out.println(box1);
 
-        System.out.println(b1);
-        System.out.println(b2);
+        int hash = box1.hashCode();
+        System.out.println("Hash Code: " + hash);
+        System.out.println("Original Code: " + System.identityHashCode(box1));
 
-        System.out.println("HashCode1: " + b1.hashCode());
-        System.out.println("HashCode2: " + b2.hashCode());
-        System.out.println(new Box("Wooden", 7.2, true).hashCode());
+        Box box2 = new Box("Red", 10.5, 20.0);
+        Box box3 = new Box("Blue", 12.0, 15.0);
+
+        System.out.println("Checking same location: " + (box2 == box3));
+        boolean same = box2.equals(box3);
+        System.out.println("Box2 is same as Box3: " + same);
     }
 }

@@ -4,18 +4,18 @@ import com.xworkz.toString.internal.Book;
 
 public class BookRunner {
     public static void main(String[] args) {
-        Book book1 = new Book("Wings of Fire", "A.P.J. Abdul Kalam", 250.0);
-        Book book2 = new Book("The Alchemist", "Paulo Coelho", 300.0);
-
+        Book book1 = new Book("The Alchemist", "Paulo Coelho", 299.0);
         System.out.println(book1);
-        System.out.println(book2);
 
-        int code1 = book1.hashCode();
-        System.out.println("Code1: " + code1);
+        int hash = book1.hashCode();
+        System.out.println("Hash Code: " + hash);
+        System.out.println("Original Code: " + System.identityHashCode(book1));
 
-        int code2 = book2.hashCode();
-        System.out.println("Code2: " + code2);
+        Book book2 = new Book("The Alchemist", "Paulo Coelho", 299.0);
+        Book book3 = new Book("The Power of Now", "Eckhart Tolle", 399.0);
 
-        System.out.println(new Book("1984", "George Orwell", 199.0).hashCode());
+        System.out.println("Checking same location: " + (book2 == book3));
+        boolean same = book2.equals(book3);
+        System.out.println("Book2 is same as Book3: " + same);
     }
 }

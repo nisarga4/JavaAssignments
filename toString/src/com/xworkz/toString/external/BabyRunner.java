@@ -4,18 +4,18 @@ import com.xworkz.toString.internal.Baby;
 
 public class BabyRunner {
     public static void main(String[] args) {
-        Baby baby1 = new Baby("Aarav", 8, 7.2);
-        Baby baby2 = new Baby("Mira", 12, 8.5);
-
+        Baby baby1 = new Baby("Ava", 10, "Teddy Bear");
         System.out.println(baby1);
-        System.out.println(baby2);
 
-        int code1 = baby1.hashCode();
-        System.out.println("Code1: " + code1);
+        int hash = baby1.hashCode();
+        System.out.println("Hash Code: " + hash);
+        System.out.println("Original Code: " + System.identityHashCode(baby1));
 
-        int code2 = baby2.hashCode();
-        System.out.println("Code2: " + code2);
+        Baby baby2 = new Baby("Ava", 10, "Teddy Bear");
+        Baby baby3 = new Baby("Noah", 8, "Rattle");
 
-        System.out.println(new Baby("Zoya", 6, 6.8).hashCode());
+        System.out.println("Checking same location: " + (baby2 == baby3));
+        boolean same = baby2.equals(baby3);
+        System.out.println("Baby2 is same as Baby3: " + same);
     }
 }

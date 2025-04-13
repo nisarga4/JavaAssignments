@@ -1,28 +1,40 @@
 package com.xworkz.toString.internal;
 
 public class Panipuri {
-    private String waterType;
-    private boolean spicy;
-    private int count;
+    private String flavor;
+    private int quantity;
+    private String size;
 
-    public Panipuri(String waterType, boolean spicy, int count) {
-        this.waterType = waterType;
-        this.spicy = spicy;
-        this.count = count;
+    public Panipuri(String flavor, int quantity, String size) {
+        this.flavor = flavor;
+        this.quantity = quantity;
+        this.size = size;
     }
 
     @Override
     public String toString() {
         return "Panipuri{" +
-                "WaterType='" + waterType + '\'' +
-                ", Spicy=" + (spicy ? "Yes" : "No") +
-                ", Count=" + count +
+                "Flavor='" + flavor + '\'' +
+                ", Quantity=" + quantity +
+                ", Size='" + size + '\'' +
                 '}';
     }
 
     @Override
     public int hashCode() {
-        System.out.println("Default hashcode: " + super.hashCode());
-        return 29029;
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null) {
+            if (obj instanceof Panipuri) {
+                Panipuri otherPanipuri = (Panipuri) obj;
+                return this.flavor.equals(otherPanipuri.flavor) &&
+                        this.quantity == otherPanipuri.quantity &&
+                        this.size.equals(otherPanipuri.size);
+            }
+        }
+        return false;
     }
 }

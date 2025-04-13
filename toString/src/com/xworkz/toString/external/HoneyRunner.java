@@ -4,14 +4,20 @@ import com.xworkz.toString.internal.Honey;
 
 public class HoneyRunner {
     public static void main(String[] args) {
-        Honey h1 = new Honey("Forest", 250.0, true);
-        Honey h2 = new Honey("Farm", 500.0, false);
+        Honey honey1 = new Honey("Manuka", 0.5, "New Zealand");
+        System.out.println(honey1);
 
-        System.out.println(h1);
-        System.out.println(h2);
+        int hash = honey1.hashCode();
+        System.out.println("Hash Code: " + hash);
+        System.out.println("Original Code: " + System.identityHashCode(honey1));
 
-        System.out.println("HashCode1: " + h1.hashCode());
-        System.out.println("HashCode2: " + h2.hashCode());
-        System.out.println(new Honey("Mountain", 300.0, true).hashCode());
+        Honey honey2 = new Honey("Manuka", 0.5, "New Zealand");
+        Honey honey3 = new Honey("Acacia", 0.75, "Australia");
+
+        System.out.println("Checking same location: " + (honey1 == honey2));
+        boolean same = honey1.equals(honey2);
+        System.out.println("Honey1 is same as Honey2: " + same);
+
+        System.out.println("Honey1 is same as Honey3: " + honey1.equals(honey3));
     }
 }

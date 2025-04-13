@@ -4,14 +4,18 @@ import com.xworkz.toString.internal.Arrow;
 
 public class ArrowRunner {
     public static void main(String[] args) {
-        Arrow a1 = new Arrow("Wood", 50.5, true);
-        Arrow a2 = new Arrow("Carbon", 45.0, false);
+        Arrow arrow1 = new Arrow("Wood", 30, "Hunting");
+        System.out.println(arrow1);
 
-        System.out.println(a1);
-        System.out.println(a2);
+        int hash = arrow1.hashCode();
+        System.out.println("Hash Code: " + hash);
+        System.out.println("Original Code: " + System.identityHashCode(arrow1));
 
-        System.out.println("HashCode1: " + a1.hashCode());
-        System.out.println("HashCode2: " + a2.hashCode());
-        System.out.println(new Arrow("Bamboo", 47.8, true).hashCode());
+        Arrow arrow2 = new Arrow("Wood", 30, "Hunting");
+        Arrow arrow3 = new Arrow("Steel", 25, "Sport");
+
+        System.out.println("Checking same location: " + (arrow2 == arrow3));
+        boolean same = arrow2.equals(arrow3);
+        System.out.println("Arrow2 is same as Arrow3: " + same);
     }
 }

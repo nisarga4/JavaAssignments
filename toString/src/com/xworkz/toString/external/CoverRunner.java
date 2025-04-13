@@ -4,14 +4,20 @@ import com.xworkz.toString.internal.Cover;
 
 public class CoverRunner {
     public static void main(String[] args) {
-        Cover c1 = new Cover("Plastic", "A4", true);
-        Cover c2 = new Cover("Cloth", "A5", false);
+        Cover cover1 = new Cover("Leather", "Black", "Medium");
+        System.out.println(cover1);
 
-        System.out.println(c1);
-        System.out.println(c2);
+        int hash = cover1.hashCode();
+        System.out.println("Hash Code: " + hash);
+        System.out.println("Original Code: " + System.identityHashCode(cover1));
 
-        System.out.println("HashCode1: " + c1.hashCode());
-        System.out.println("HashCode2: " + c2.hashCode());
-        System.out.println(new Cover("Leather", "A3", true).hashCode());
+        Cover cover2 = new Cover("Leather", "Black", "Medium");
+        Cover cover3 = new Cover("Fabric", "Red", "Small");
+
+        System.out.println("Checking same location: " + (cover1 == cover2));
+        boolean same = cover1.equals(cover2);
+        System.out.println("Cover1 is same as Cover2: " + same);
+
+        System.out.println("Cover1 is same as Cover3: " + cover1.equals(cover3));
     }
 }

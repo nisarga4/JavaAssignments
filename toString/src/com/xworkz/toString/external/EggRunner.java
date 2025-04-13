@@ -4,14 +4,20 @@ import com.xworkz.toString.internal.Egg;
 
 public class EggRunner {
     public static void main(String[] args) {
-        Egg e1 = new Egg("Hen", true, 50);
-        Egg e2 = new Egg("Duck", false, 70);
+        Egg egg1 = new Egg("Organic", "Large", "Brown");
+        System.out.println(egg1);
 
-        System.out.println(e1);
-        System.out.println(e2);
+        int hash = egg1.hashCode();
+        System.out.println("Hash Code: " + hash);
+        System.out.println("Original Code: " + System.identityHashCode(egg1));
 
-        System.out.println("HashCode1: " + e1.hashCode());
-        System.out.println("HashCode2: " + e2.hashCode());
-        System.out.println(new Egg("Quail", false, 35).hashCode());
+        Egg egg2 = new Egg("Organic", "Large", "Brown");
+        Egg egg3 = new Egg("Free-range", "Medium", "White");
+
+        System.out.println("Checking same location: " + (egg1 == egg2));
+        boolean same = egg1.equals(egg2);
+        System.out.println("Egg1 is same as Egg2: " + same);
+
+        System.out.println("Egg1 is same as Egg3: " + egg1.equals(egg3));
     }
 }

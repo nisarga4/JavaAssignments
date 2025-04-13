@@ -4,14 +4,20 @@ import com.xworkz.toString.internal.MoviePoster;
 
 public class MoviePosterRunner {
     public static void main(String[] args) {
-        MoviePoster m1 = new MoviePoster("Inception", "Sci-Fi", 2010);
-        MoviePoster m2 = new MoviePoster("RRR", "Action", 2022);
+        MoviePoster poster1 = new MoviePoster("Inception", "Christopher Nolan", 2010);
+        System.out.println(poster1);
 
-        System.out.println(m1);
-        System.out.println(m2);
+        int hash = poster1.hashCode();
+        System.out.println("Hash Code: " + hash);
 
-        System.out.println("HashCode1: " + m1.hashCode());
-        System.out.println("HashCode2: " + m2.hashCode());
-        System.out.println(new MoviePoster("Titanic", "Romance", 1997).hashCode());
+        MoviePoster poster2 = new MoviePoster("Inception", "Christopher Nolan", 2010);
+        MoviePoster poster3 = new MoviePoster("Interstellar", "Christopher Nolan", 2014);
+
+        System.out.println("Checking same location: " + (poster1 == poster2));
+        boolean same = poster1.equals(poster2);
+        System.out.println("Poster1 is same as Poster2: " + same);
+
+        boolean different = poster1.equals(poster3);
+        System.out.println("Poster1 is same as Poster3: " + different);
     }
 }

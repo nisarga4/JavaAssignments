@@ -4,14 +4,20 @@ import com.xworkz.toString.internal.Nail;
 
 public class NailRunner {
     public static void main(String[] args) {
-        Nail n1 = new Nail("Iron", 3.5, true);
-        Nail n2 = new Nail("Steel", 2.0, false);
+        Nail nail1 = new Nail("Steel", 5.0, 2.0);
+        System.out.println(nail1);
 
-        System.out.println(n1);
-        System.out.println(n2);
+        int hash = nail1.hashCode();
+        System.out.println("Hash Code: " + hash);
 
-        System.out.println("HashCode1: " + n1.hashCode());
-        System.out.println("HashCode2: " + n2.hashCode());
-        System.out.println(new Nail("Copper", 1.5, true).hashCode());
+        Nail nail2 = new Nail("Steel", 5.0, 2.0);
+        Nail nail3 = new Nail("Copper", 4.0, 1.5);
+
+        System.out.println("Checking same location: " + (nail1 == nail2));
+        boolean same = nail1.equals(nail2);
+        System.out.println("Nail1 is same as Nail2: " + same);
+
+        boolean different = nail1.equals(nail3);
+        System.out.println("Nail1 is same as Nail3: " + different);
     }
 }

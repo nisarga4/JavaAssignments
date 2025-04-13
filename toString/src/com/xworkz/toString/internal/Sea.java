@@ -2,27 +2,44 @@ package com.xworkz.toString.internal;
 
 public class Sea {
     private String name;
-    private double depth; // in meters
-    private boolean salty;
+    private String location;
+    private double depth;
 
-    public Sea(String name, double depth, boolean salty) {
+    public Sea(String name, String location, double depth) {
         this.name = name;
+        this.location = location;
         this.depth = depth;
-        this.salty = salty;
     }
 
     @Override
     public String toString() {
         return "Sea{" +
-                "Name='" + name + '\'' +
-                ", Depth=" + depth + "m" +
-                ", Salty=" + (salty ? "Yes" : "No") +
+                "name='" + name + '\'' +
+                ", location='" + location + '\'' +
+                ", depth=" + depth +
                 '}';
     }
 
     @Override
     public int hashCode() {
-        System.out.println("Default hashcode: " + super.hashCode());
-        return 34034;
+        System.out.println("Default hashCode: " + super.hashCode());
+        return 123;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null) {
+            System.out.println("Ref is not null");
+            if (obj instanceof Sea) {
+                System.out.println("Ref is Sea, comparing...");
+                Sea sea1 = this;
+                Sea sea2 = (Sea) obj;
+                if (sea1.name.equals(sea2.name) && sea1.location.equals(sea2.location) && sea1.depth == sea2.depth) {
+                    System.out.println("Both Sea objects are identical");
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }

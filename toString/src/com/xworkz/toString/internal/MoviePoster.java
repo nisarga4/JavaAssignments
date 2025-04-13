@@ -2,27 +2,39 @@ package com.xworkz.toString.internal;
 
 public class MoviePoster {
     private String movieName;
-    private String genre;
-    private int year;
+    private String director;
+    private int releaseYear;
 
-    public MoviePoster(String movieName, String genre, int year) {
+    public MoviePoster(String movieName, String director, int releaseYear) {
         this.movieName = movieName;
-        this.genre = genre;
-        this.year = year;
+        this.director = director;
+        this.releaseYear = releaseYear;
     }
 
     @Override
     public String toString() {
         return "MoviePoster{" +
-                "MovieName='" + movieName + '\'' +
-                ", Genre='" + genre + '\'' +
-                ", Year=" + year +
+                "Movie Name='" + movieName + '\'' +
+                ", Director='" + director + '\'' +
+                ", Release Year=" + releaseYear +
                 '}';
     }
 
     @Override
     public int hashCode() {
-        System.out.println("Default hashcode: " + super.hashCode());
-        return 24024;
+        return movieName.hashCode() + director.hashCode() + Integer.hashCode(releaseYear);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null) {
+            if (obj instanceof MoviePoster) {
+                MoviePoster otherPoster = (MoviePoster) obj;
+                return this.movieName.equals(otherPoster.movieName) &&
+                        this.director.equals(otherPoster.director) &&
+                        this.releaseYear == otherPoster.releaseYear;
+            }
+        }
+        return false;
     }
 }

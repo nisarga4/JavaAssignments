@@ -4,14 +4,20 @@ import com.xworkz.toString.internal.Water;
 
 public class WaterRunner {
     public static void main(String[] args) {
-        Water w1 = new Water("River", 7.5, true);
-        Water w2 = new Water("Sea", 8.2, false);
+        Water water1 = new Water("River", 10.5, "Clean");
+        System.out.println(water1);
 
-        System.out.println(w1);
-        System.out.println(w2);
+        int hash = water1.hashCode();
+        System.out.println("Hash Code: " + hash);
+        System.out.println("Original Code: " + System.identityHashCode(water1));
 
-        System.out.println("HashCode1: " + w1.hashCode());
-        System.out.println("HashCode2: " + w2.hashCode());
-        System.out.println(new Water("Well", 6.8, true).hashCode());
+        Water water2 = new Water("River", 10.5, "Clean");
+        Water water3 = new Water("Well", 15.0, "Impure");
+
+        System.out.println("Checking same location: " + (water1 == water2));
+        boolean same = water1.equals(water2);
+        System.out.println("Water1 is same as Water2: " + same);
+
+        System.out.println("Water1 is same as Water3: " + water1.equals(water3));
     }
 }

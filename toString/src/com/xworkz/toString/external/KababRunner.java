@@ -4,14 +4,20 @@ import com.xworkz.toString.internal.Kabab;
 
 public class KababRunner {
     public static void main(String[] args) {
-        Kabab k1 = new Kabab("Seekh", 4, true);
-        Kabab k2 = new Kabab("Shami", 2, false);
+        Kabab kabab1 = new Kabab("Chicken", 5, "Spicy");
+        System.out.println(kabab1);
 
-        System.out.println(k1);
-        System.out.println(k2);
+        int hash = kabab1.hashCode();
+        System.out.println("Hash Code: " + hash);
+        System.out.println("Original Code: " + System.identityHashCode(kabab1));
 
-        System.out.println("HashCode1: " + k1.hashCode());
-        System.out.println("HashCode2: " + k2.hashCode());
-        System.out.println(new Kabab("Tandoori", 3, true).hashCode());
+        Kabab kabab2 = new Kabab("Chicken", 5, "Spicy");
+        Kabab kabab3 = new Kabab("Mutton", 3, "Mild");
+
+        System.out.println("Checking same location: " + (kabab1 == kabab2));
+        boolean same = kabab1.equals(kabab2);
+        System.out.println("Kabab1 is same as Kabab2: " + same);
+
+        System.out.println("Kabab1 is same as Kabab3: " + kabab1.equals(kabab3));
     }
 }

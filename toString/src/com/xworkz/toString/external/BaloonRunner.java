@@ -4,14 +4,18 @@ import com.xworkz.toString.internal.Baloon;
 
 public class BaloonRunner {
     public static void main(String[] args) {
-        Baloon b1 = new Baloon("Red", 30.0, true);
-        Baloon b2 = new Baloon("Blue", 25.0, false);
+        Baloon baloon1 = new Baloon("Red", 12, "Heart");
+        System.out.println(baloon1);
 
-        System.out.println(b1);
-        System.out.println(b2);
+        int hash = baloon1.hashCode();
+        System.out.println("Hash Code: " + hash);
+        System.out.println("Original Code: " + System.identityHashCode(baloon1));
 
-        System.out.println("HashCode1: " + b1.hashCode());
-        System.out.println("HashCode2: " + b2.hashCode());
-        System.out.println(new Baloon("Yellow", 20.0, true).hashCode());
+        Baloon baloon2 = new Baloon("Red", 12, "Heart");
+        Baloon baloon3 = new Baloon("Blue", 10, "Round");
+
+        System.out.println("Checking same location: " + (baloon2 == baloon3));
+        boolean same = baloon2.equals(baloon3);
+        System.out.println("Baloon2 is same as Baloon3: " + same);
     }
 }

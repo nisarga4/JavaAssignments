@@ -4,14 +4,20 @@ import com.xworkz.toString.internal.Music;
 
 public class MusicRunner {
     public static void main(String[] args) {
-        Music m1 = new Music("Pop", "Taylor Swift", 4);
-        Music m2 = new Music("Rock", "Queen", 5);
+        Music music1 = new Music("Shape of You", "Ed Sheeran", 233);
+        System.out.println(music1);
 
-        System.out.println(m1);
-        System.out.println(m2);
+        int hash = music1.hashCode();
+        System.out.println("Hash Code: " + hash);
 
-        System.out.println("HashCode1: " + m1.hashCode());
-        System.out.println("HashCode2: " + m2.hashCode());
-        System.out.println(new Music("Jazz", "Norah Jones", 6).hashCode());
+        Music music2 = new Music("Shape of You", "Ed Sheeran", 233);
+        Music music3 = new Music("Blinding Lights", "The Weeknd", 200);
+
+        System.out.println("Checking same location: " + (music1 == music2));
+        boolean same = music1.equals(music2);
+        System.out.println("Music1 is same as Music2: " + same);
+
+        boolean different = music1.equals(music3);
+        System.out.println("Music1 is same as Music3: " + different);
     }
 }

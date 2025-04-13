@@ -4,14 +4,20 @@ import com.xworkz.toString.internal.Clip;
 
 public class ClipRunner {
     public static void main(String[] args) {
-        Clip c1 = new Clip("Plastic", "Blue", true);
-        Clip c2 = new Clip("Metal", "Silver", false);
+        Clip clip1 = new Clip("Paper", "Black", 5.0);
+        System.out.println(clip1);
 
-        System.out.println(c1);
-        System.out.println(c2);
+        int hash = clip1.hashCode();
+        System.out.println("Hash Code: " + hash);
+        System.out.println("Original Code: " + System.identityHashCode(clip1));
 
-        System.out.println("HashCode1: " + c1.hashCode());
-        System.out.println("HashCode2: " + c2.hashCode());
-        System.out.println(new Clip("Wood", "Brown", true).hashCode());
+        Clip clip2 = new Clip("Paper", "Black", 5.0);
+        Clip clip3 = new Clip("Hair", "Brown", 3.0);
+
+        System.out.println("Checking same location: " + (clip1 == clip2));
+        boolean same = clip1.equals(clip2);
+        System.out.println("Clip1 is same as Clip2: " + same);
+
+        System.out.println("Clip1 is same as Clip3: " + clip1.equals(clip3));
     }
 }
