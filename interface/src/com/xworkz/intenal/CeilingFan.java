@@ -1,4 +1,4 @@
-package com.xworkz.interfacee;
+package com.xworkz.intenal;
 
 import com.xworkz.internal.Fan;
 

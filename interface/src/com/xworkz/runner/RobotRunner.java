@@ -1,6 +1,6 @@
 package com.xworkz.runner;
 
-import com.xworkz.interfacee.AndroidRobot;
+import com.xworkz.intenal.AndroidRobot;
 import com.xworkz.internal.Robot;
 
 public class RobotRunner {

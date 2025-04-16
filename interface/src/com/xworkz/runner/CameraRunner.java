@@ -1,6 +1,6 @@
 package com.xworkz.runner;
 
-import com.xworkz.interfacee.DSLR;
+import com.xworkz.intenal.DSLR;
 import com.xworkz.internal.Camera;
 
 public class CameraRunner {

@@ -1,6 +1,6 @@
 package com.xworkz.runner;
 
-import com.xworkz.interfacee.CeilingFan;
+import com.xworkz.intenal.CeilingFan;
 import com.xworkz.internal.Fan;
 
 public class FanRunner {

@@ -1,6 +1,6 @@
 package com.xworkz.runner;
 
-import com.xworkz.interfacee.PhilipsHue;
+import com.xworkz.intenal.PhilipsHue;
 import com.xworkz.internal.SmartLight;
 
 public class SmartLightRunner {

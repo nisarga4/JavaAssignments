@@ -1,6 +1,6 @@
 package com.xworkz.runner;
 
-import com.xworkz.interfacee.Car;
+import com.xworkz.intenal.Car;
 import com.xworkz.internal.Vehicle;
 
 public class VehicleRunner {

@@ -1,6 +1,6 @@
 package com.xworkz.runner;
 
-import com.xworkz.interfacee.SmartTV;
+import com.xworkz.intenal.SmartTV;
 import com.xworkz.internal.TV;
 
 public class TelevisionRunner {

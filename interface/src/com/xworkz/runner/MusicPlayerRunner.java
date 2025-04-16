@@ -1,6 +1,6 @@
 package com.xworkz.runner;
 
-import com.xworkz.interfacee.MP3Player;
+import com.xworkz.intenal.MP3Player;
 import com.xworkz.internal.MusicPlayer;
 
 public class MusicPlayerRunner {

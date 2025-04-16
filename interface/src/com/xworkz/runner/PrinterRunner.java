@@ -1,6 +1,6 @@
 package com.xworkz.runner;
 
-import com.xworkz.interfacee.LaserPrinter;
+import com.xworkz.intenal.LaserPrinter;
 import com.xworkz.internal.Printer;
 
 public class PrinterRunner {

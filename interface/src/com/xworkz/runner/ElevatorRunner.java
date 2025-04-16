@@ -1,6 +1,6 @@
 package com.xworkz.runner;
 
-import com.xworkz.interfacee.OfficeElevator;
+import com.xworkz.intenal.OfficeElevator;
 import com.xworkz.internal.Elevator;
 
 public class ElevatorRunner {
