@@ -1,7 +1,7 @@
-package com.xworkz.internal;
+package com.xworkz.interfacee;
 
 public interface Robot {
-    void activate();
+    void start();
     void performTask();
     void shutdown();
 }

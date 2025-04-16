@@ -1,4 +1,4 @@
-package com.xworkz.internal;
+package com.xworkz.interfacee;
 
 public interface Elevator {
     void goUp();

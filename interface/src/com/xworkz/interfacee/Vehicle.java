@@ -1,5 +1,5 @@
 
-package com.xworkz.internal;
+package com.xworkz.interfacee;
 
 public interface Vehicle {
     void start();
