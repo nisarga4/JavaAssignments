@@ -1,7 +1,7 @@
 package com.xworkz.runner;
 
 import com.xworkz.intenal.DSLR;
-import com.xworkz.internal.Camera;
+import com.xworkz.interfacee.Camera;
 
 public class CameraRunner {
     public static void main(String[] args) {
@@ -11,3 +11,4 @@ public class CameraRunner {
         camera.close();
     }
 }
+

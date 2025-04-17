@@ -1,17 +1,19 @@
 package com.xworkz.intenal;
 
-import com.xworkz.internal.Fan;
+
+import com.xworkz.interfacee.Fan;
 
 public class CeilingFan implements Fan {
-    public void turnOn() {
-        System.out.println("Ceiling fan turned on.");
+    public void start() {
+        System.out.println("Fan started.");
     }
 
-    public void rotate() {
-        System.out.println("Ceiling fan is rotating.");
+    public void changeSpeed() {
+        System.out.println("Speed changed to level 3.");
     }
 
-    public void turnOff() {
-        System.out.println("Ceiling fan turned off.");
+    public void stop() {
+        System.out.println("Fan stopped.");
     }
 }
+

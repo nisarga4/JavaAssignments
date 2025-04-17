@@ -1,5 +1,5 @@
 package com.xworkz.intenal;
-import com.xworkz.internal.Movie;
+import com.xworkz.interfacee.Movie;
 
 public class ActionMovie implements Movie {
         public void play() {

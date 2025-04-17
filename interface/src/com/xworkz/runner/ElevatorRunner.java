@@ -1,7 +1,8 @@
 package com.xworkz.runner;
 
+
 import com.xworkz.intenal.OfficeElevator;
-import com.xworkz.internal.Elevator;
+import com.xworkz.interfacee.Elevator;
 
 public class ElevatorRunner {
     public static void main(String[] args) {

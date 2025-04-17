@@ -1,7 +1,8 @@
 package com.xworkz.runner;
 
+
 import com.xworkz.intenal.SavingsAccount;
-import com.xworkz.internal.BankAccount;
+import com.xworkz.interfacee.BankAccount;
 
 public class BankAccountRunner {
     public static void main(String[] args) {
@@ -11,3 +12,4 @@ public class BankAccountRunner {
         account.checkBalance();
     }
 }
+

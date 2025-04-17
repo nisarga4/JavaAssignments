@@ -1,6 +1,7 @@
 package com.xworkz.intenal;
 
-import com.xworkz.internal.SmartLight;
+
+import com.xworkz.interfacee.SmartLight;
 
 public class PhilipsHue implements SmartLight {
     public void connect() {

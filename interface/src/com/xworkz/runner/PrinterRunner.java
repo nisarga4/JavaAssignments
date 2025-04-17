@@ -1,7 +1,8 @@
 package com.xworkz.runner;
 
+
 import com.xworkz.intenal.LaserPrinter;
-import com.xworkz.internal.Printer;
+import com.xworkz.interfacee.Printer;
 
 public class PrinterRunner {
     public static void main(String[] args) {
@@ -11,3 +12,4 @@ public class PrinterRunner {
         printer.turnOff();
     }
 }
+

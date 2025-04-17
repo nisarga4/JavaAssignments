@@ -1,6 +1,6 @@
 package com.xworkz.intenal;
 
-import com.xworkz.internal.BankAccount;
+import com.xworkz.interfacee.BankAccount;
 
 public class SavingsAccount implements BankAccount {
     public void deposit() {
@@ -15,3 +15,5 @@ public class SavingsAccount implements BankAccount {
         System.out.println("Checking savings account balance.");
     }
 }
+
+

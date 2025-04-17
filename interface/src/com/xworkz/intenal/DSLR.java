@@ -1,7 +1,7 @@
 
 package com.xworkz.intenal;
 
-import com.xworkz.internal.Camera;
+import com.xworkz.interfacee.Camera;
 
 public class DSLR implements Camera {
     public void open() {

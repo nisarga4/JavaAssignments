@@ -1,6 +1,6 @@
 package com.xworkz.intenal;
 
-import com.xworkz.internal.Printer;
+import com.xworkz.interfacee.Printer;
 
 public class LaserPrinter implements Printer {
     public void turnOn() {

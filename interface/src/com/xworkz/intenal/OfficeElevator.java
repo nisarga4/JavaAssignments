@@ -1,6 +1,6 @@
 package com.xworkz.intenal;
 
-import com.xworkz.internal.Elevator;
+import com.xworkz.interfacee.Elevator;
 
 public class OfficeElevator implements Elevator {
     public void goUp() {

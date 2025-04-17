@@ -1,6 +1,7 @@
 package com.xworkz.intenal;
 
-import com.xworkz.internal.MusicPlayer;
+
+import com.xworkz.interfacee.MusicPlayer;
 
 public class MP3Player implements MusicPlayer {
     public void loadSong() {

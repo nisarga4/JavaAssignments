@@ -1,7 +1,8 @@
 package com.xworkz.runner;
 
+
 import com.xworkz.intenal.Car;
-import com.xworkz.internal.Vehicle;
+import com.xworkz.interfacee.Vehicle;
 
 public class VehicleRunner {
     public static void main(String[] args) {
@@ -11,3 +12,4 @@ public class VehicleRunner {
         vehicle.stop();
     }
 }
+

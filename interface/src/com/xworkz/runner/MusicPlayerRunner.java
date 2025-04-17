@@ -1,7 +1,8 @@
 package com.xworkz.runner;
 
+
 import com.xworkz.intenal.MP3Player;
-import com.xworkz.internal.MusicPlayer;
+import com.xworkz.interfacee.MusicPlayer;
 
 public class MusicPlayerRunner {
     public static void main(String[] args) {
@@ -11,3 +12,4 @@ public class MusicPlayerRunner {
         player.stopSong();
     }
 }
+

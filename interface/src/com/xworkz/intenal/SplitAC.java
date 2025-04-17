@@ -1,5 +1,5 @@
 package com.xworkz.intenal;
-
+import com.xworkz.interfacee.AirConditioner;
 
 public class SplitAC implements AirConditioner {
     public void turnOn() {

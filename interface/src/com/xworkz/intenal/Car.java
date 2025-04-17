@@ -1,6 +1,7 @@
 package com.xworkz.intenal;
 
-import com.xworkz.internal.Vehicle;
+
+import com.xworkz.interfacee.Vehicle;
 
 public class Car implements Vehicle {
     public void start() {

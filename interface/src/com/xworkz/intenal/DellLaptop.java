@@ -1,6 +1,8 @@
 package com.xworkz.intenal;
 
 
+import com.xworkz.interfacee.Laptop;
+
 public class DellLaptop implements Laptop {
     public void boot() {
         System.out.println("Laptop booting...");

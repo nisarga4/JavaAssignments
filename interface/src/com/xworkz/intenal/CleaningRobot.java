@@ -1,6 +1,4 @@
 package com.xworkz.intenal;
-
-
 import com.xworkz.interfacee.Robot;
 
 public class CleaningRobot implements Robot {

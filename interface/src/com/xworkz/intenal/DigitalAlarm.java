@@ -1,5 +1,7 @@
 package com.xworkz.intenal;
-import java.util.interfacee.Alarm;
+
+import com.xworkz.interfacee.Alarm;
+
 public class DigitalAlarm implements Alarm {
     public void setTime() {
         System.out.println("Alarm set for 6:30 AM.");
