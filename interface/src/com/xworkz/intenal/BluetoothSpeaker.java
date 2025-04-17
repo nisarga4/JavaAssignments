@@ -12,5 +12,20 @@ public class BluetoothSpeaker implements Speaker {
     public void disconnect() {
         System.out.println("Bluetooth speaker disconnected.");
     }
+
+    @Override
+    public void increaseVolume() {
+
+    }
+
+    @Override
+    public void decreaseVolume() {
+
+    }
+
+    @Override
+    public void mute() {
+
+    }
 }
 
